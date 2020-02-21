@@ -1,8 +1,8 @@
 export default [
   {
     name: 'Aaron Mullan',
-    github: '',
-    linkedin: '',
+    github: 'https://github.com/aaronmullan',
+    linkedin: 'https://www.linkedin.com/in/aaron-mullan/',
     image: ''
   },
 
