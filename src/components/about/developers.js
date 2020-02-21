@@ -8,8 +8,8 @@ export default [
 
   {
     name: 'Brittany Houtz',
-    github: '',
-    linkedin: '',
+    github: 'https://github.com/llastflowers',
+    linkedin: 'https://www.linkedin.com/in/brittanyhoutz/',
     image: ''
   },
 
