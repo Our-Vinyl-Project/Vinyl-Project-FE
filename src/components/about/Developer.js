@@ -7,8 +7,8 @@ export const Developer = ({ name, linkedin, github, image }) => {
       <img src={image}/>
       <p>{name}</p>
       <section>
-        <a href={linkedin}><img src="" /></a>
-        <a href={github}><img src="" /></a>
+        <a href={linkedin}><img src="../../assets/github.png"/></a>
+        <a href={github}><img src="../../assets/linkedin.png"/></a>
       </section>
     </li>
   );
