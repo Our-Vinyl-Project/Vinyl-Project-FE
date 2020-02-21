@@ -1,4 +1,6 @@
 import React from 'react';
+import { Developer } from './Developer';
+import developerArray from './developers';
 
 export const AboutUs = () => {
   const developerElements = developerArray.map((dev) => {
