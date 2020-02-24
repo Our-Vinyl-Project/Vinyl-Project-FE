@@ -9,10 +9,10 @@ const getWantlist = username => {
       if(!ok){
         throw data;
       }
-      // return data.wants.map(wants => ({
-      //   id: wants.id,
-      //   title: wants.title,
-      //   url: wants.resource_url
+      return data.wants.map(wants => ({
+        // id: wants.id,
+        // title: wants.title,
+        // url: wants.resource_url
 
       }));
     });
