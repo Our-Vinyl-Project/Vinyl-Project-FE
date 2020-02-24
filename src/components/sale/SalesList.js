@@ -1,18 +1,28 @@
 import React from 'react';
-import SaleItem from '../sale/SaleItem';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-//saleItemElements = map over list of items on sale and create individual <li> <SaleItem /></li>
+const SalesList = ({ salesList }) => {
+  const saleItem = salesList.map(sale => (
+    <li key={sale.id}>
+      <Link to={`/${sale.id}`}>
+        <img src="" />
+        <h5>{sale.title}</h5>
+        <p>{sale.condition}</p>
+        <p>{sale.price}</p>
+      </Link>
+    </li>
+  ));
 
-function SalesList(props) {
   return (
     <ul>
-      {saleItemElements}
+      {saleItem}
     </ul>
   );
-}
+};
 
 SalesList.propTypes = {
-  
+  salesList: PropTypes.array
 };
+
 export default SalesList;
