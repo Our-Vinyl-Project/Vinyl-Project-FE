@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-// TO DO: add img src; check that id is the right way to direct to detail page; see if we need more info on the saleItems to show "deals" 
+// TO DO: see if we need more info on the saleItems to show "deals" 
 
 const SalesList = ({ sampleEnhancedScrape }) => {
   const saleItem = sampleEnhancedScrape.listing.map(sale => (

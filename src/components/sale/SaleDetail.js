@@ -1,20 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// added 'placeholder' because we will probably need to make a lot of changes to this to incorporate redux
-
-const SaleDetail = () => {
-  const saleDetailsList = 'placeholder';
-  const saleDetail = saleDetailsList.map(({ imageURL, title, condition, releaseDate, price, suggestedPrice, percentDiff, amountDiff }) => (
+const SaleDetail = ({ sampleEnhancedScrape }) => {
+  const saleDetail = sampleEnhancedScrape.listing.map(sale => (
     <>
       <section>
-        <h2>{title}</h2>
-        <p>{releaseDate}</p>
-        <img src={imageURL} />
+        <h2>{sale.title}</h2>
+        <img src={sampleEnhancedScrape.thumbnail} />
       </section>
       <section>
-        <p>Condition: {condition}</p>
-        <p>Fair Market Price: {suggestedPrice}</p>
-        <span>Price: {price}</span><span>+/-{percentDiff}%</span><span>+/- ${amountDiff}</span>
+        <p>Condition: {sale.condition_media}</p>
+        <p>Ships from: {sale.ships_from}</p>
+        <p>Fair Market Price: ${sale.suggested_price}</p>
+        <p>Price: {sale.price}</p>
+        <p>{sale.percent_diff}%</p>
+        <p>${sale.amount_diff}</p>
       </section>
     </>
 
@@ -25,6 +25,10 @@ const SaleDetail = () => {
       {saleDetail}
     </>
   );
+};
+
+SaleDetail.propTypes = {
+  sampleEnhancedScrape: PropTypes.object
 };
 
 export default SaleDetail;
