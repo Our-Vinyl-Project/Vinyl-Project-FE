@@ -15,9 +15,11 @@ const SalesList = ({ salesList }) => {
   ));
 
   return (
-    <ul>
-      {saleItem}
-    </ul>
+    <>
+      <ul>
+        {saleItem}
+      </ul>
+    </>
   );
 };
 
