@@ -1,18 +1,32 @@
 import React from 'react';
-import SaleItem from '../sale/SaleItem';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-//saleItemElements = map over list of items on sale and create individual <li> <SaleItem /></li>
+// TO DO: see if we need more info on the saleItems to show "deals" 
 
-function SalesList(props) {
+const SalesList = ({ sampleEnhancedScrape }) => {
+  const saleItem = sampleEnhancedScrape.listing.map(sale => (
+    <li key={sale.id}>
+      <Link to={`/${sale.id}`}>
+        <img src={sampleEnhancedScrape.thumbnail} />
+        <h5>{sale.title}</h5>
+        <p>{sale.condition_media}</p>
+        <p>{sale.price}</p>
+      </Link>
+    </li>
+  ));
+
   return (
-    <ul>
-      {saleItemElements}
-    </ul>
+    <>
+      <ul>
+        {saleItem}
+      </ul>
+    </>
   );
-}
+};
 
 SalesList.propTypes = {
-  
+  sampleEnhancedScrape: PropTypes.object
 };
+
 export default SalesList;
