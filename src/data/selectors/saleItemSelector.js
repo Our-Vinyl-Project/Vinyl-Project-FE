@@ -44,4 +44,13 @@ export const selectSaleItem = (stateArray, saleItemId) => {
 // console.log(selectSaleItem(sade, '1066295371'));
 
 
-
+export const selectSalesByCondition = (array, condition) => {
+  
+  let conditionArray = array.map(sale => {
+    if(sale.condition_media === condition) {
+      return sale;
+    }
+  });
+  return conditionArray;
+};
+// console.log(selectSalesByCondition(sade, 'Near Mint (NM or M-)'));
