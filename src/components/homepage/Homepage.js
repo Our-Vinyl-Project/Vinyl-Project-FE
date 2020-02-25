@@ -1,8 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import SalesList from '../sale/SalesList';
+// import SalesList from '../sale/SalesList';
 // import SaleDetail from '../sale/SaleDetail';
 // import SortDropdown from './SortDropdown';
+import Controls from './Controls';
 
 // const sampleEnhancedScrape = {
 //   pagination: { items: 3, hasNext: false, totalPages: 1 },
@@ -53,9 +54,9 @@ import SalesList from '../sale/SalesList';
 function Homepage() {
   return (
     <div>
-
+      <Controls />
       {/* <SortDropdown /> */}
-      <SalesList />
+      {/* <SalesList /> */}
       {/* < SaleDetail sampleEnhancedScrape={sampleEnhancedScrape} /> */}
     </div>
   );
