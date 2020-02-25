@@ -29,13 +29,13 @@ return (
 
     <label>Minimum Condition:</label>
     <select>
-      <option value="condition">condition</option>
-      <option value="condition">condition</option>
-      <option value="condition">condition</option>
-      <option value="condition">condition</option>
-      <option value="condition">condition</option>
-      <option value="condition">condition</option>
-      <option value="condition">condition</option>
+      <option value="fair">Fair</option>
+      <option value="good">Good</option>
+      <option value="good plus">Good Plus</option>
+      <option value="very good">Very Good</option>
+      <option value="very good plus">Very Good Plus</option>
+      <option value="near mint">Near Mint</option>
+      <option value="mint">Mint</option>
     </select>
   </>
 
