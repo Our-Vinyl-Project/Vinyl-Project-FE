@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SortDropdown = () => (
+const Controls = () => (
 
   );
 
 return (
   <>
+  <label>Username:</label>
+  <input type="text"></input>
+
   <label>Sort by:</label>
     <select>
       <option value="condition">Best Condition</option>
@@ -41,6 +44,6 @@ return (
 
 );
 
-SortDropdown.propTypes = {};
+Controls.propTypes = {};
 
-export default SortDropdown;
+export default Controls;
