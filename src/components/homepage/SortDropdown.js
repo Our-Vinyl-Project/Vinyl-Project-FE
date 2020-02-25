@@ -15,6 +15,17 @@ return (
       <option value="amount_diff">$ Discount</option>
     </select>
 
+    <label>Minimum Condition:</label>
+    <select>
+      <option value="fair">Fair</option>
+      <option value="good">Good</option>
+      <option value="good plus">Good Plus</option>
+      <option value="very good">Very Good</option>
+      <option value="very good plus">Very Good Plus</option>
+      <option value="near mint">Near Mint</option>
+      <option value="mint">Mint</option>
+    </select>
+
     <label>Maximum Price:</label>
     <select>
       <option value="5000">$5000</option>
@@ -25,17 +36,6 @@ return (
       <option value="50">$50</option>
       <option value="25">$25</option>
       <option value="10">$10</option>
-    </select>
-
-    <label>Minimum Condition:</label>
-    <select>
-      <option value="fair">Fair</option>
-      <option value="good">Good</option>
-      <option value="good plus">Good Plus</option>
-      <option value="very good">Very Good</option>
-      <option value="very good plus">Very Good Plus</option>
-      <option value="near mint">Near Mint</option>
-      <option value="mint">Mint</option>
     </select>
   </>
 
