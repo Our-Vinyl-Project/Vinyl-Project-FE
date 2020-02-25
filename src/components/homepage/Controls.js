@@ -1,13 +1,23 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { isWantsLoading, selectWants } from '../../data/selectors/wantsSelector';
+import { getWants } from '../../data/actions/wantActions';
 // import PropTypes from 'prop-types';
 
 const Controls = () => {
+
+  const dispatch = useDispatch();
+  const loading = useSelector(isWantsLoading);
+  const salesArray = useSelector(selectWants);
+  const handleSubmit = () => {
+
+  };
 
   return (
     <>
       <label>Username:</label>
       <input type="text"></input>
-      <button>Find Deals</button>
+      <button onSubmit={handleSubmit}>Find Deals</button>
       <br/><br/>
 
       <label>Sort by:</label>

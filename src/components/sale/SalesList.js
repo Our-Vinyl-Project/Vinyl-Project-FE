@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-// TO DO: see if we need more info on the saleItems to show "deals" 
+import getWants from '../../data/actions/wantActions';
 
 const SalesList = ({ sampleEnhancedScrape }) => {
-  const saleItem = sampleEnhancedScrape.listing.map(sale => (
+  const saleItem = sampleEnhancedScrape.map(sale => (
     <li key={sale.id}>
       <Link to={`/${sale.id}`}>
-        <img src={sampleEnhancedScrape.thumbnail} />
+        <img src={sale.thumbnail} />
         <h5>{sale.title}</h5>
         <p>{sale.condition_media}</p>
-        <p>{sale.price}</p>
+        <p>{sale.item_only_price}</p>
       </Link>
     </li>
   ));
