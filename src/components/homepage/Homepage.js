@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import SalesList from '../sale/SalesList';
-import SaleDetail from '../sale/SaleDetail';
+import SalesList from '../sale/SalesList';
+// import SaleDetail from '../sale/SaleDetail';
 // import SortDropdown from './SortDropdown';
 
 const sampleEnhancedScrape = {
@@ -55,8 +55,8 @@ function Homepage() {
     <div>
 
       {/* <SortDropdown /> */}
-      {/* <SalesList sampleEnhancedScrape={sampleEnhancedScrape} /> */}
-      < SaleDetail sampleEnhancedScrape={sampleEnhancedScrape} />
+      <SalesList sampleEnhancedScrape={sampleEnhancedScrape} />
+      {/* < SaleDetail sampleEnhancedScrape={sampleEnhancedScrape} /> */}
     </div>
   );
 }
