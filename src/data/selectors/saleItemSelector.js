@@ -54,3 +54,24 @@ export const selectSalesByCondition = (array, condition) => {
   return conditionArray;
 };
 // console.log(selectSalesByCondition(sade, 'Near Mint (NM or M-)'));
+
+const selectSalesbyReleaseId = (array, id) => {
+
+  let releaseArray = array.map(item => {
+    if(item.id === id) {
+      return item;
+    }
+  });
+  return releaseArray;
+};
+
+// console.log(selectSalesbyReleaseId(sade, '/Sade-The-Best-Of-Sade/release/8131475'));
+
+const selectSalesbyCountry = (array, country) => {
+  let countryArray = array.map(item => {
+    if(item.ships_from === country) {
+      return item;
+    }
+  });
+  return countryArray;
+};
