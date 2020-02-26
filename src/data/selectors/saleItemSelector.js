@@ -45,13 +45,13 @@
 <label>Min. Condition:</label>
 <select>
   <option value="All">All </option>
-  <option value="fair">Fair</option>
-  <option value="good">Good</option>
-  <option value="good-plus">Good Plus</option>
-  <option value="very-good">Very Good</option>
-  <option value="very-good-plus">Very Good Plus</option>
-  <option value="near mint">Near Mint</option>
-  <option value="mint">Mint</option>
+  <option value="F">Fair</option>
+  <option value="G">Good</option>
+  <option value="GP">Good Plus</option>
+  <option value="VG">Very Good</option>
+  <option value="VGP">Very Good Plus</option>
+  <option value="NM">Near Mint</option>
+  <option value="M">Mint</option>
 </select>
 
 <label>Max. Price:</label>
@@ -77,15 +77,15 @@
 // 'Poor (P)': 1
 
 const getSalesItemsFilter1 = (state, condition) => {
-
+  return state.wants.filter(want => want.media_condition === condition)
 };
 
 const getSalesItemsFilter2 = (filtered1, maxPrice) => {
-
+  return filtered1.filter(release => release.item_only_price < maxPrice);
 };
 
 const getSorted = (filtered2, sortBy) => {
-
+  return filtered2.sort((a, b) => a.sortBy - b.sortBy);
 };
 
 export const selectSaleItems = (state, sortBy, condition, maxPrice) => {
