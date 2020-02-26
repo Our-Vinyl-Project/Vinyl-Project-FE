@@ -28,7 +28,7 @@ const Controls = () => {
         </select>
 
         <label>Min. Condition:</label>
-        <select>
+        {/* <select>
           <option value="fair">Any</option>
           <option value="fair">Fair</option>
           <option value="good">Good</option>
@@ -37,6 +37,17 @@ const Controls = () => {
           <option value="very good plus">Very Good Plus</option>
           <option value="near mint">Near Mint</option>
           <option value="mint">Mint</option>
+        </select> */}
+        <select>
+          <option value="Any">Any</option>
+          <option value="Poor (P)">Poor</option>
+          <option value="Fair (F)">Fair</option>
+          <option value="Good (G)">Good</option>
+          <option value="Good Plus (G+)">Good Plus</option>
+          <option value="Very Good (VG)">Very Good</option>
+          <option value="Very Good Plus (VG+)">Very Good Plus</option>
+          <option value="Near Mint (NM or M-)">Near Mint</option>
+          <option value="Mint (M)">Mint</option>
         </select>
 
         <label>Max. Price:</label>

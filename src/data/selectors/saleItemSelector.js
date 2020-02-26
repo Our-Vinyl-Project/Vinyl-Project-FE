@@ -44,14 +44,15 @@
 
 <label>Min. Condition:</label>
 <select>
-  <option value="All">All </option>
-  <option value="F">Fair</option>
-  <option value="G">Good</option>
-  <option value="GP">Good Plus</option>
-  <option value="VG">Very Good</option>
-  <option value="VGP">Very Good Plus</option>
-  <option value="NM">Near Mint</option>
-  <option value="M">Mint</option>
+  <option value="Any">Any</option>
+  <option value="Poor (P)">Poor/option>
+  <option value="Fair (F)">Fair</option>
+  <option value="Good (G)">Good</option>
+  <option value="Good Plus (G+)">Good Plus</option>
+  <option value="Very Good (VG)">Very Good</option>
+  <option value="Very Good Plus (VG+)">Very Good Plus</option>
+  <option value="Near Mint (NM or M-)">Near Mint</option>
+  <option value="Mint (M)">Mint</option>
 </select>
 
 <label>Max. Price:</label>
@@ -76,25 +77,23 @@
 // 'Fair (F)': 2,
 // 'Poor (P)': 1
 
-const getSalesItemsFilter1 = (state, condition) => {
-  return state.wants.filter(want => want.media_condition === condition)
-};
+// pass in state
+export const getSalesItemsFilter1 = ({ wants: { saleItems } }, condition) =>
+  condition === 'Any' ? saleItems : saleItems.filter(saleItem => saleItem.condition_media === condition);
 
-const getSalesItemsFilter2 = (filtered1, maxPrice) => {
-  return filtered1.filter(release => release.item_only_price < maxPrice);
-};
+export const getSalesItemsFilter2 = (filtered1, maxPrice) =>
+  filtered1.filter(release => release.item_only_price <= maxPrice);
 
-const getSorted = (filtered2, sortBy) => {
-  return filtered2.sort((a, b) => a.sortBy - b.sortBy);
-};
+export const getSorted = (filtered2, sortBy) =>
+  filtered2.sort((a, b) => a[sortBy] - b[sortBy]);
 
 export const selectSaleItems = (state, sortBy, condition, maxPrice) => {
-  if(sortBy === 'deal') // run the algorithm and return the result
+  if(sortBy === 'deal')      ;// run the algorithm and return the result
 
   const filtered1 = getSalesItemsFilter1(state, condition);
-  const filtered2 = getSalesItemsFilter2(filtered1, maxPrice)
+  const filtered2 = getSalesItemsFilter2(filtered1, maxPrice);
   return getSorted(filtered2, sortBy);
-}
+};
 
 export const selectSaleItem = (stateArray, saleItemId) => {
 
