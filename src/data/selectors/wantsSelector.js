@@ -1,2 +1,2 @@
 export const isWantsLoading = state => state.wants.loading;
-export const selectWants = state => state.wants;
+export const selectSaleItems = state => state.wants.saleItems;

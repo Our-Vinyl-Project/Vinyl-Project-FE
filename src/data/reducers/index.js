@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import wantsReducer from './wantsReducer';
+import wants from './wantsReducer';
 
 export default combineReducers({
-  wantsReducer
+  wants
 });
