@@ -84,24 +84,25 @@ export const filterByCondition = ({ wants: { saleItems } }, condition) =>
   condition === 'Any' ?
     saleItems :
     saleItems.filter(saleItem => conditionRatings[saleItem.condition_media] >= +condition);
-
 export const filterByMaxPrice = (filteredByCondition, maxPrice) =>
-  filteredByCondition.filter(release => release.item_only_price <= maxPrice);
-
+  maxPrice === '' ?
+    filteredByCondition :
+    filteredByCondition.filter(release => release.item_only_price <= maxPrice);
 export const sortBy = (filteredByMaxPrice, sortCriterion) =>
-  filteredByMaxPrice.sort((a, b) => a[sortCriterion] - b[sortCriterion]);
-
+  sortCriterion === 'deal' ?
+    filteredByMaxPrice : // THIS IS WHERE WE ACTUALLY NEED TO RUN THE DEAL FINDING ALGO
+    filteredByMaxPrice.slice().sort((a, b) => a[sortCriterion] - b[sortCriterion]);
 export const selectSaleItems = (state, sortCriterion, condition, maxPrice) => {
-  if(sortCriterion === 'deal') return state.wants.salesItems; // run the algorithm and return the result
-
   const filteredByCondition = filterByCondition(state, condition);
   const filteredByMaxPrice = filterByMaxPrice(filteredByCondition, maxPrice);
   return sortBy(filteredByMaxPrice, sortCriterion);
+
 };
+
+
 
 export const selectSaleItem = (stateArray, saleItemId) =>
   stateArray.find(item => item.id = saleItemId);
-// console.log(selectSaleItem(sade, '1066295371'));
 
 
 // export const selectSalesByCondition = (array, condition) => {
