@@ -100,9 +100,8 @@ export const selectSaleItems = (state, sortCriterion, condition, maxPrice) => {
 };
 
 export const selectSaleItem = (stateArray, saleItemId) =>
-  stateArray.find(item => item.id = saleItemId);
+  stateArray.wants.saleItems.find(item => item.id = saleItemId);
 // console.log(selectSaleItem(sade, '1066295371'));
-
 
 // export const selectSalesByCondition = (array, condition) => {
   

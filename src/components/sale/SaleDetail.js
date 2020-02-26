@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 import { selectSaleItem } from '../../data/selectors/saleItemSelector';
 
 const SaleDetail = ({ match }) => {
-  const sale = useSelector(state => state.wants.saleItems.find(item => item.id = match.params.id));
-  console.log(sale);
+  const sale = useSelector(state => selectSaleItem(state, match.params.id));
   return (
     <>
       <section>
@@ -17,22 +16,22 @@ const SaleDetail = ({ match }) => {
         <p>Condition (Sleeve): {sale.condition_sleeve}</p>
         <p>Ships from: {sale.ships_from}</p>
         <p>Fair Market Price: ${sale.suggested_price}</p>
-        <p>Price: ${sale.item_only_price}</p>
-        <p>{sale.percent_diff}%</p>
-        <p>${sale.amount_diff}</p>
-
-        <button>Get This Deal!</button>
+        <span>Price: ${sale.item_only_price}</span>
+        <span>({sale.percent_diff}%)</span>
+        <span>(${sale.amount_diff})</span>
+        <br/>
+        <button><a href={`https:/www.discogs.com${sale.sale_link}`}>Get This Deal!</a></button>
       </section>
     </>
   );};
 
 SaleDetail.propTypes = {
   wants: PropTypes.array,
-  // match: PropTypes.shape({
-  //   params: PropTypes.object({
-  //     id: PropTypes.string
-  //   })
-  // })
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string
+    })
+  })
 };
 
 export default SaleDetail;
