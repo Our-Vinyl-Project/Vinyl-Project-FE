@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styles from '../App.css';
 
 const SalesList = ({ wants }) => {
   const saleItem = wants.map(sale => (
@@ -16,9 +17,11 @@ const SalesList = ({ wants }) => {
 
   return (
     <>
-      <ul>
-        {saleItem}
-      </ul>
+      <div className={styles.SalesList}>
+        <ul>
+          {saleItem}
+        </ul>
+      </div>
     </>
   );
 };

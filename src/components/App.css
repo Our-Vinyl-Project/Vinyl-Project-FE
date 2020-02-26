@@ -1,5 +1,6 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
 }
 
 h1 {
@@ -7,6 +8,10 @@ h1 {
 }
 
 label {
+  margin: auto 7px;
+}
+
+button {
   margin: auto 7px;
 }
 
@@ -25,6 +30,8 @@ p {
 
 ul {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 li {
@@ -32,6 +39,7 @@ li {
   border-radius: 5px;
   padding: 1%;
   width: fit-content;
+  margin: 7px;
 }
 
 a {
