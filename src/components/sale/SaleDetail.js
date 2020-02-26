@@ -1,34 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { selectSaleItem } from '../../data/selectors/saleItemSelector';
 
-const SaleDetail = ({ sampleEnhancedScrape }) => {
-  const saleDetail = sampleEnhancedScrape.listing.map(sale => (
+const SaleDetail = ({ match }) => {
+  const sale = useSelector(state => selectSaleItem(state, match.params.id));
+  return (
     <>
       <section>
         <h2>{sale.title}</h2>
-        <img src={sampleEnhancedScrape.thumbnail} />
+        <img src={sale.thumbnail} />
       </section>
       <section>
-        <p>Condition: {sale.condition_media}</p>
+        <p>Condition (Media): {sale.condition_media}</p>
+        <p>Condition (Sleeve): {sale.condition_sleeve}</p>
         <p>Ships from: {sale.ships_from}</p>
         <p>Fair Market Price: ${sale.suggested_price}</p>
-        <p>Price: {sale.price}</p>
-        <p>{sale.percent_diff}%</p>
-        <p>${sale.amount_diff}</p>
+        <span>Price: ${sale.item_only_price}</span>
+        <span>({sale.percent_diff}%)</span>
+        <span>(${sale.amount_diff})</span>
+        <br/>
+        <button><a href={`https:/www.discogs.com${sale.sale_link}`}>Get This Deal!</a></button>
       </section>
     </>
-
-  ));
-
-  return (
-    <>
-      {saleDetail}
-    </>
-  );
-};
+  );};
 
 SaleDetail.propTypes = {
-  sampleEnhancedScrape: PropTypes.object
+  wants: PropTypes.array,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string
+    })
+  })
 };
 
 export default SaleDetail;

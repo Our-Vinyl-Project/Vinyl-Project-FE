@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from '../App.css';
+// import styles from '../App.css';
 
 const SalesList = ({ wants }) => {
-  const saleItem = wants.map(sale => (
-    <li key={sale.sale_id}>
-      <Link to={`/${sale.sale_link}`}>
+  const saleItem = wants.map((sale, i) => (
+    <li key={i}>
+      <Link to={`/detail/${sale.sale_id}`}>
         <img src={sale.thumbnail} />
         <h3>{sale.title}</h3>
         <p>Condition: {sale.condition_media}</p>
@@ -17,11 +17,9 @@ const SalesList = ({ wants }) => {
 
   return (
     <>
-      <div className={styles.SalesList}>
-        <ul>
-          {saleItem}
-        </ul>
-      </div>
+      <ul>
+        {saleItem}
+      </ul>
     </>
   );
 };
