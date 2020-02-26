@@ -7,9 +7,8 @@ import SalesList from '../sale/SalesList';
 function Homepage() {
   const wants = useSelector(selectSaleItems);
   useEffect(() => {
-    console.log(wants);
+    //confirm that we need this useEffect?
   }, [wants]);
-  console.log(wants);
   if(!wants){
     return (
       <div>
