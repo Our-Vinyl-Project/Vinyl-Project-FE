@@ -4,7 +4,6 @@ import { selectWants } from '../../data/selectors/wantsSelector';
 // import PropTypes from 'prop-types';
 import Controls from './Controls';
 import SalesList from '../sale/SalesList';
-// import SaleDetail from '../sale/SaleDetail';
 function Homepage() {
   const wants = useSelector(selectWants);
   useEffect(() => {
@@ -23,7 +22,6 @@ function Homepage() {
     <div>
       <Controls />
       <SalesList wants={wants} />
-      {/* < SaleDetail /> */}
     </div>
   );
 }
