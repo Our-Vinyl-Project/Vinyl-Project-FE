@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getWants } from '../../data/actions/wantActions';
+import setControls from '../../data/actions/controlActions';
 
 
 const Controls = () => {
-
+  const [sortType, setSortType] = useState('');
+  const [condition, setCondition] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
   const [user, setUser] = useState('');
   const dispatch = useDispatch();
-  const handleClick = () => {
+
+  const handleClick = (event) => {
+    // event.preventDefault();
     dispatch(getWants(user));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(setControls({ sortType, condition, maxPrice }));
   };
 
   return (
@@ -18,9 +28,9 @@ const Controls = () => {
       <button onClick={handleClick}>Find Deals</button>
       <br/><br/>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Sort by:</label>
-        <select>
+        <select onChange={({ target }) => setSortType(target.value)} >
           <option value="deal">Best Deals</option>
           <option value="condition">Best Condition</option>
           <option value="price">Lowest Price</option>
@@ -29,7 +39,7 @@ const Controls = () => {
         </select>
 
         <label>Min. Condition:</label>
-        <select>
+        <select onChange={({ target }) => setCondition(target.value)}>
           <option value="0">Any</option>
           <option value="2">Fair</option>
           <option value="3">Good</option>
@@ -41,7 +51,7 @@ const Controls = () => {
         </select>
 
         <label>Max. Price:</label>
-        <input type="number" placeholder="$"/>
+        <input type="number" placeholder="$" onChange={({ target }) => setMaxPrice(target.value)}/>
         <button>Update</button>
       </form>      
     </>
