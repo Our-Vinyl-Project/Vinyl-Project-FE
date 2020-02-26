@@ -33,7 +33,7 @@
 //   }
 // ];
 
-{/* <label>Sort by:</label>
+/* <label>Sort by:</label>
 <select>
   <option value="deal">Best Deals</option>
   <option value="condition">Best Condition</option>
@@ -66,7 +66,7 @@
   <option value="50">$50</option>
   <option value="25">$25</option>
   <option value="10">$10</option>
-</select> */}
+</select> */
 
 // 'Mint (M)': 8,
 // 'Near Mint (NM or M-)': 7,
@@ -77,62 +77,61 @@
 // 'Fair (F)': 2,
 // 'Poor (P)': 1
 
+import conditionRatings from '../conditionRatings';
+
 // pass in state
-export const getSalesItemsFilter1 = ({ wants: { saleItems } }, condition) =>
-  condition === 'Any' ? saleItems : saleItems.filter(saleItem => saleItem.condition_media === condition);
+export const filterByCondition = ({ wants: { saleItems } }, condition) =>
+  condition === 'Any' ?
+    saleItems :
+    saleItems.filter(saleItem => conditionRatings[saleItem.condition_media] >= +condition);
 
-export const getSalesItemsFilter2 = (filtered1, maxPrice) =>
-  filtered1.filter(release => release.item_only_price <= maxPrice);
+export const filterByMaxPrice = (filteredByCondition, maxPrice) =>
+  filteredByCondition.filter(release => release.item_only_price <= maxPrice);
 
-export const getSorted = (filtered2, sortBy) =>
-  filtered2.sort((a, b) => a[sortBy] - b[sortBy]);
+export const sortBy = (filteredByMaxPrice, sortCriterion) =>
+  filteredByMaxPrice.sort((a, b) => a[sortCriterion] - b[sortCriterion]);
 
-export const selectSaleItems = (state, sortBy, condition, maxPrice) => {
-  if(sortBy === 'deal')      ;// run the algorithm and return the result
+export const selectSaleItems = (state, sortCriterion, condition, maxPrice) => {
+  if(sortCriterion === 'deal') return state.wants.salesItems; // run the algorithm and return the result
 
-  const filtered1 = getSalesItemsFilter1(state, condition);
-  const filtered2 = getSalesItemsFilter2(filtered1, maxPrice);
-  return getSorted(filtered2, sortBy);
+  const filteredByCondition = filterByCondition(state, condition);
+  const filteredByMaxPrice = filterByMaxPrice(filteredByCondition, maxPrice);
+  return sortBy(filteredByMaxPrice, sortCriterion);
 };
 
-export const selectSaleItem = (stateArray, saleItemId) => {
-
-  const obj = stateArray.find(item => item.id = saleItemId);
-
-  return obj;
-
-};
+export const selectSaleItem = (stateArray, saleItemId) =>
+  stateArray.find(item => item.id = saleItemId);
 // console.log(selectSaleItem(sade, '1066295371'));
 
 
-export const selectSalesByCondition = (array, condition) => {
+// export const selectSalesByCondition = (array, condition) => {
   
-  let conditionArray = array.map(sale => {
-    if(sale.condition_media === condition) {
-      return sale;
-    }
-  });
-  return conditionArray;
-};
+//   let conditionArray = array.map(sale => {
+//     if(sale.condition_media === condition) {
+//       return sale;
+//     }
+//   });
+//   return conditionArray;
+// };
 // console.log(selectSalesByCondition(sade, 'Near Mint (NM or M-)'));
 
-const selectSalesbyReleaseId = (array, id) => {
+// const selectSalesbyReleaseId = (array, id) => {
 
-  let releaseArray = array.map(item => {
-    if(item.id === id) {
-      return item;
-    }
-  });
-  return releaseArray;
-};
+//   let releaseArray = array.map(item => {
+//     if(item.id === id) {
+//       return item;
+//     }
+//   });
+//   return releaseArray;
+// };
 
 // console.log(selectSalesbyReleaseId(sade, '/Sade-The-Best-Of-Sade/release/8131475'));
 
-const selectSalesbyCountry = (array, country) => {
-  let countryArray = array.map(item => {
-    if(item.ships_from === country) {
-      return item;
-    }
-  });
-  return countryArray;
-};
+// const selectSalesbyCountry = (array, country) => {
+//   let countryArray = array.map(item => {
+//     if(item.ships_from === country) {
+//       return item;
+//     }
+//   });
+//   return countryArray;
+// };
