@@ -14,4 +14,4 @@ export default function wantsReducer(state = initialState, action){
     default:
       return state;
   }
-};
+}
