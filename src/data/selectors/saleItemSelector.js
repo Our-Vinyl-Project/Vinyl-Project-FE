@@ -33,6 +33,68 @@
 //   }
 // ];
 
+{/* <label>Sort by:</label>
+<select>
+  <option value="deal">Best Deals</option>
+  <option value="condition">Best Condition</option>
+  <option value="price">Lowest Price</option>
+  <option value="percent_diff">% Discount</option>
+  <option value="amount_diff">$ Discount</option>
+</select>
+
+<label>Min. Condition:</label>
+<select>
+  <option value="All">All </option>
+  <option value="fair">Fair</option>
+  <option value="good">Good</option>
+  <option value="good-plus">Good Plus</option>
+  <option value="very-good">Very Good</option>
+  <option value="very-good-plus">Very Good Plus</option>
+  <option value="near mint">Near Mint</option>
+  <option value="mint">Mint</option>
+</select>
+
+<label>Max. Price:</label>
+<select>
+  <option value="fair">Any</option>
+  <option value="5000">$5000</option>
+  <option value="1000">$1000</option>
+  <option value="500">$500</option>
+  <option value="250">$250</option>
+  <option value="100">$100</option>
+  <option value="50">$50</option>
+  <option value="25">$25</option>
+  <option value="10">$10</option>
+</select> */}
+
+// 'Mint (M)': 8,
+// 'Near Mint (NM or M-)': 7,
+// 'Very Good Plus (VG+)': 6,
+// 'Very Good (VG)': 5,
+// 'Good Plus (G+)': 4,
+// 'Good (G)': 3,
+// 'Fair (F)': 2,
+// 'Poor (P)': 1
+
+const getSalesItemsFilter1 = (state, condition) => {
+
+};
+
+const getSalesItemsFilter2 = (filtered1, maxPrice) => {
+
+};
+
+const getSorted = (filtered2, sortBy) => {
+
+};
+
+export const selectSaleItems = (state, sortBy, condition, maxPrice) => {
+  if(sortBy === 'deal') // run the algorithm and return the result
+
+  const filtered1 = getSalesItemsFilter1(state, condition);
+  const filtered2 = getSalesItemsFilter2(filtered1, maxPrice)
+  return getSorted(filtered2, sortBy);
+}
 
 export const selectSaleItem = (stateArray, saleItemId) => {
 
