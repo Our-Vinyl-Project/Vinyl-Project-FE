@@ -1,0 +1,40 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+label {
+  margin: auto 7px;
+}
+
+img {
+  height: 200px;
+}
+
+h3 {
+  font-size: 16px;
+  max-width: 200px;
+}
+
+p {
+  font-size: 12px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  border: 1px dotted black;
+  border-radius: 5px;
+  padding: 1%;
+  width: fit-content;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

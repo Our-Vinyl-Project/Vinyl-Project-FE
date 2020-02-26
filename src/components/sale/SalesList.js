@@ -7,9 +7,9 @@ const SalesList = ({ wants }) => {
     <li key={sale.sale_id}>
       <Link to={`/${sale.sale_link}`}>
         <img src={sale.thumbnail} />
-        <h5>{sale.title}</h5>
-        <p>{sale.condition_media}</p>
-        <p>{sale.item_only_price}</p>
+        <h3>{sale.title}</h3>
+        <p>Condition: {sale.condition_media}</p>
+        <p>${sale.item_only_price}</p>
       </Link>
     </li>
   ));
