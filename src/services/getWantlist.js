@@ -11,6 +11,3 @@ const getWantlist = username => {
 };
 
 export default getWantlist;
-
-
-
