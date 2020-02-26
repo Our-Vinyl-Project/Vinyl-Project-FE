@@ -170,9 +170,10 @@ describe('getSorted function', () => {
 //   const filtered2 = getSalesItemsFilter2(filtered1, maxPrice)
 //   return getSorted(filtered2, sortBy);
 // };
+
 describe('selectSaleItems', () => {
   it('returns an array of sales items after filtering and sorting', () => {
-    const selectSaleItems = (state, 'item_only_price', 'Near Mint (NM or M-)', 20);
+    const result = selectSaleItems(state, 'item_only_price', 'Near Mint (NM or M-)', 20);
     expect(selectSaleItems).toEqual([{
       title: 'Sade - The Best Of Sade (2xLP, Comp, RE, Gat)',
       condition_sleeve: 'Near Mint (NM or M-)',
