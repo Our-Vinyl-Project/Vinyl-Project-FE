@@ -174,7 +174,7 @@ describe('getSorted function', () => {
 describe('selectSaleItems', () => {
   it('returns an array of sales items after filtering and sorting', () => {
     const result = selectSaleItems(state, 'item_only_price', 'Near Mint (NM or M-)', 20);
-    expect(selectSaleItems).toEqual([{
+    expect(result).toEqual([{
       title: 'Sade - The Best Of Sade (2xLP, Comp, RE, Gat)',
       condition_sleeve: 'Near Mint (NM or M-)',
       condition_media: 'Near Mint (NM or M-)',
