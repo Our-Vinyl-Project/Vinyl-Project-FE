@@ -33,45 +33,105 @@
 //   }
 // ];
 
+/* <label>Sort by:</label>
+<select>
+  <option value="deal">Best Deals</option>
+  <option value="condition">Best Condition</option>
+  <option value="price">Lowest Price</option>
+  <option value="percent_diff">% Discount</option>
+  <option value="amount_diff">$ Discount</option>
+</select>
 
-export const selectSaleItem = (stateArray, saleItemId) => {
+<label>Min. Condition:</label>
+<select>
+  <option value="Any">Any</option>
+  <option value="Poor (P)">Poor/option>
+  <option value="Fair (F)">Fair</option>
+  <option value="Good (G)">Good</option>
+  <option value="Good Plus (G+)">Good Plus</option>
+  <option value="Very Good (VG)">Very Good</option>
+  <option value="Very Good Plus (VG+)">Very Good Plus</option>
+  <option value="Near Mint (NM or M-)">Near Mint</option>
+  <option value="Mint (M)">Mint</option>
+</select>
 
-  const obj = stateArray.find(item => item.id = saleItemId);
+<label>Max. Price:</label>
+<select>
+  <option value="fair">Any</option>
+  <option value="5000">$5000</option>
+  <option value="1000">$1000</option>
+  <option value="500">$500</option>
+  <option value="250">$250</option>
+  <option value="100">$100</option>
+  <option value="50">$50</option>
+  <option value="25">$25</option>
+  <option value="10">$10</option>
+</select> */
 
-  return obj;
+// 'Mint (M)': 8,
+// 'Near Mint (NM or M-)': 7,
+// 'Very Good Plus (VG+)': 6,
+// 'Very Good (VG)': 5,
+// 'Good Plus (G+)': 4,
+// 'Good (G)': 3,
+// 'Fair (F)': 2,
+// 'Poor (P)': 1
 
+import conditionRatings from '../conditionRatings';
+
+// pass in state
+export const filterByCondition = ({ wants: { saleItems } }, condition) =>
+  condition === 'Any' ?
+    saleItems :
+    saleItems.filter(saleItem => conditionRatings[saleItem.condition_media] >= +condition);
+
+export const filterByMaxPrice = (filteredByCondition, maxPrice) =>
+  filteredByCondition.filter(release => release.item_only_price <= maxPrice);
+
+export const sortBy = (filteredByMaxPrice, sortCriterion) =>
+  filteredByMaxPrice.sort((a, b) => a[sortCriterion] - b[sortCriterion]);
+
+export const selectSaleItems = (state, sortCriterion, condition, maxPrice) => {
+  if(sortCriterion === 'deal') return state.wants.salesItems; // run the algorithm and return the result
+
+  const filteredByCondition = filterByCondition(state, condition);
+  const filteredByMaxPrice = filterByMaxPrice(filteredByCondition, maxPrice);
+  return sortBy(filteredByMaxPrice, sortCriterion);
 };
+
+export const selectSaleItem = (stateArray, saleItemId) =>
+  stateArray.find(item => item.id = saleItemId);
 // console.log(selectSaleItem(sade, '1066295371'));
 
 
-export const selectSalesByCondition = (array, condition) => {
+// export const selectSalesByCondition = (array, condition) => {
   
-  let conditionArray = array.map(sale => {
-    if(sale.condition_media === condition) {
-      return sale;
-    }
-  });
-  return conditionArray;
-};
+//   let conditionArray = array.map(sale => {
+//     if(sale.condition_media === condition) {
+//       return sale;
+//     }
+//   });
+//   return conditionArray;
+// };
 // console.log(selectSalesByCondition(sade, 'Near Mint (NM or M-)'));
 
-const selectSalesbyReleaseId = (array, id) => {
+// const selectSalesbyReleaseId = (array, id) => {
 
-  let releaseArray = array.map(item => {
-    if(item.id === id) {
-      return item;
-    }
-  });
-  return releaseArray;
-};
+//   let releaseArray = array.map(item => {
+//     if(item.id === id) {
+//       return item;
+//     }
+//   });
+//   return releaseArray;
+// };
 
 // console.log(selectSalesbyReleaseId(sade, '/Sade-The-Best-Of-Sade/release/8131475'));
 
-const selectSalesbyCountry = (array, country) => {
-  let countryArray = array.map(item => {
-    if(item.ships_from === country) {
-      return item;
-    }
-  });
-  return countryArray;
-};
+// const selectSalesbyCountry = (array, country) => {
+//   let countryArray = array.map(item => {
+//     if(item.ships_from === country) {
+//       return item;
+//     }
+//   });
+//   return countryArray;
+// };
