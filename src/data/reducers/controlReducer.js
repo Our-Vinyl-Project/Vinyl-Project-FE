@@ -1,14 +1,12 @@
 import { SET_CONTROLS } from '../actions/controlActions';
 
 const initialState = {
-
-  sortType: '',
-  condition: '',
+  sortType: 'deal',
+  condition: '0',
   maxPrice: ''
-
 };
 
-export default function controlReducer(state = initialState, action){
+export default function controls(state = initialState, action){
   switch(action.type){
     case SET_CONTROLS:
       return { ...action.payload };

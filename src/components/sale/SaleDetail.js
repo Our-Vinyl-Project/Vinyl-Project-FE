@@ -5,7 +5,6 @@ import { selectSaleItem } from '../../data/selectors/saleItemSelector';
 
 const SaleDetail = ({ match }) => {
   const sale = useSelector(state => selectSaleItem(state, match.params.id));
-  console.log(sale);
   return (
     <>
       <section>
