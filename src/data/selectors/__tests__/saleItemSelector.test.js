@@ -171,8 +171,28 @@ describe('getSorted function', () => {
 //   return getSorted(filtered2, sortBy);
 // };
 
-// describe('selectSaleItems', () => {
-//   it('returns an array of sales items after filtering and sorting', () => {
-//     const selectSaleItems = (state, 'item_only_price', )
-//   });
-// });
+describe('selectSaleItems', () => {
+  it('returns an array of sales items after filtering and sorting', () => {
+    const result = selectSaleItems(state, 'item_only_price', 'Near Mint (NM or M-)', 20);
+    expect(selectSaleItems).toEqual([{
+      title: 'Sade - The Best Of Sade (2xLP, Comp, RE, Gat)',
+      condition_sleeve: 'Near Mint (NM or M-)',
+      condition_media: 'Near Mint (NM or M-)',
+      seller: 'strat-mangler',
+      ships_from: 'Canada',
+      price: '$20.00',
+      shipping: '\n        + shipping',
+      converted_price: '',
+      release_link: '/Sade-The-Best-Of-Sade/release/8131475',
+      thumbnail: 'https://img.discogs.com/3hacFUMULShjTRzPUWto8EBDsvM=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8131475-1455731509-9131.jpeg.jpg',
+      conditionRating: 7,
+      item_only_price: 20,
+      suggested_price: 25.4575,
+      sale_id: 1061677317,
+      sale_link: '/sell/item/1061677317',
+      release_id: 8131475,
+      amount_diff: -5.4575,
+      percent_diff: -0.2143769026809388
+    }]);
+  });
+});
