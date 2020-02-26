@@ -28,33 +28,21 @@ const Controls = () => {
         </select>
 
         <label>Min. Condition:</label>
-        {/* <select>
-          <option value="fair">Any</option>
-          <option value="fair">Fair</option>
-          <option value="good">Good</option>
-          <option value="good plus">Good Plus</option>
-          <option value="very good">Very Good</option>
-          <option value="very good plus">Very Good Plus</option>
-          <option value="near mint">Near Mint</option>
-          <option value="mint">Mint</option>
-        </select> */}
         <select>
-          <option value="Any">Any</option>
-          <option value="Poor (P)">Poor</option>
-          <option value="Fair (F)">Fair</option>
-          <option value="Good (G)">Good</option>
-          <option value="Good Plus (G+)">Good Plus</option>
-          <option value="Very Good (VG)">Very Good</option>
-          <option value="Very Good Plus (VG+)">Very Good Plus</option>
-          <option value="Near Mint (NM or M-)">Near Mint</option>
-          <option value="Mint (M)">Mint</option>
+          <option value="0">Any</option>
+          <option value="2">Fair</option>
+          <option value="3">Good</option>
+          <option value="4">Good Plus</option>
+          <option value="5">Very Good</option>
+          <option value="6">Very Good Plus</option>
+          <option value="7">Near Mint</option>
+          <option value="8">Mint</option>
         </select>
 
         <label>Max. Price:</label>
         <input type="number" placeholder="$"/>
         <button>Update</button>
       </form>      
-
     </>
 
   );
