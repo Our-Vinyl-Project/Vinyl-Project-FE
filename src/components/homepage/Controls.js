@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getWants } from '../../data/actions/wantActions';
-import { setControls } from 
+
 
 const Controls = () => {
 
