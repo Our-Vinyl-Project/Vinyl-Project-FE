@@ -1,7 +1,11 @@
 {
-  "name": "vinyl-project-fe",
+  "name": "Vinyl-Project-Front-End",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discogs Marketplace Insights Front End",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Our-Vinyl-Project/vinyl-project-fe.git"
+  },
   "main": "src/index.js",
   "jest": {
     "setupFilesAfterEnv": [

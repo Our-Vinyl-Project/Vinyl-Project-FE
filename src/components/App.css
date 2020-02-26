@@ -1,0 +1,59 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+input {
+  font-size: 12px;
+  width: 100px;
+}
+
+label {
+  margin: auto 7px;
+  font-size: 12px;
+}
+
+select {
+  font-size: 12px;
+}
+
+button {
+  margin: auto 7px;
+  font-size: 12px;
+}
+
+img {
+  height: 200px;
+}
+
+h3 {
+  font-size: 16px;
+  max-width: 200px;
+}
+
+p {
+  font-size: 12px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  border: 1px dotted black;
+  border-radius: 5px;
+  padding: 1%;
+  width: fit-content;
+  margin: 7px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

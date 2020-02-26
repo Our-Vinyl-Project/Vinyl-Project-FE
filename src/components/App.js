@@ -4,6 +4,8 @@ import Header from './Header';
 import Footer from './Footer';
 import { AboutUs } from './about/AboutUs';
 import Homepage from './homepage/Homepage';
+// import './reset.css';
+import './App.css';
 
 function App() {
   return (
