@@ -7,12 +7,23 @@ h1 {
   font-size: 40px;
 }
 
+input {
+  font-size: 12px;
+  width: 100px;
+}
+
 label {
   margin: auto 7px;
+  font-size: 12px;
+}
+
+select {
+  font-size: 12px;
 }
 
 button {
   margin: auto 7px;
+  font-size: 12px;
 }
 
 img {
