@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { isWantsLoading, selectWants } from '../../data/selectors/wantsSelector';
 import { getWants } from '../../data/actions/wantActions';
-// import PropTypes from 'prop-types';
 
 const Controls = () => {
 
   const [user, setUser] = useState('');
   const dispatch = useDispatch();
-  // const loading = useSelector(isWantsLoading);
-  // const salesArray = useSelector(selectWants);
   const handleClick = () => {
     dispatch(getWants(user));
   };
@@ -44,17 +40,7 @@ const Controls = () => {
         </select>
 
         <label>Max. Price:</label>
-        <select>
-          <option value="fair">Any</option>
-          <option value="5000">$5000</option>
-          <option value="1000">$1000</option>
-          <option value="500">$500</option>
-          <option value="250">$250</option>
-          <option value="100">$100</option>
-          <option value="50">$50</option>
-          <option value="25">$25</option>
-          <option value="10">$10</option>
-        </select>
+        <input type="number" placeholder="$"/>
         <button>Update</button>
       </form>      
 
@@ -63,7 +49,5 @@ const Controls = () => {
   );
 
 };
-
-// Controls.propTypes = {};
 
 export default Controls;
