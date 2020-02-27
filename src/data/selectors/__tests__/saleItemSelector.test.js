@@ -96,9 +96,9 @@ beforeAll(() => {
   };
 });
 
-describe('getSalesItemsFilter1', () => {
+describe('filterByCondition', () => {
   it('filters sales items by a provided condition integer ranking (delivered as string)', () => {
-    const result = filterByCondition(state, '8');
+    const result = filterByCondition(state.wants.saleItems, '8');
     expect(result).toEqual([{
       title: 'Sade - The Best Of Sade (2xLP, Comp, RE, Gat)',
       condition_sleeve: 'Mint (M)',
