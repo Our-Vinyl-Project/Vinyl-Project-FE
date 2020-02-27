@@ -15,16 +15,24 @@ const SalesList = () => {
   
   if(loading) return <Loading />;
 
-  const saleItem = wants.map((sale, i) => (
-    <li key={i}>
-      <Link to={`/detail/${sale.sale_id}`}>
-        <img src={sale.thumbnail} />
-        <h3>{sale.title}</h3>
-        <p>Condition: {sale.condition_media}</p>
-        <p>${sale.item_only_price}</p>
-      </Link>
-    </li>
-  ));
+  const saleItem = wants.map((sale, i) =>
+    sale.item_only_price ?
+      (
+        <li key={i}>
+          <Link to={`/detail/${sale.sale_id}`}>
+            <img src={sale.thumbnail} />
+            <h3>{sale.title}</h3>
+            <p>Condition: {sale.condition_media}</p>
+            <p>${sale.item_only_price}</p>
+          </Link>
+        </li>
+      ) :
+      (
+        <li key={i}>
+          <img src={sale.thumbnail} />
+          <h3>{sale.title}</h3>
+        </li>
+      ));
 
   return (
     <>
