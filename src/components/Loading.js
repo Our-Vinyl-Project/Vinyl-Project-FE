@@ -1,7 +1,11 @@
 import React from 'react';
+import './Loading.css';
 
-const Loading = () => {
+export default function Loading(){
   return (
-    <h3>Loading...</h3>
+    <>
+      <h3>Loading...</h3>
+      <div className="loader"></div>
+    </>
   );
-};
+}
