@@ -22,12 +22,15 @@ h3 {
 
 p {
   font-size: 12px;
+  max-width: 200px;
 }
 
 ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 2% 10%;
 }
 
 li {
@@ -41,4 +44,8 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+
+footer {
+  margin-top: 2%
 }

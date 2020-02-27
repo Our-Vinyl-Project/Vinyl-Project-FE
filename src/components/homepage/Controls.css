@@ -3,32 +3,27 @@ label.username {
   font-size: 12px;
 }
 
-label.sortby {
-  margin: auto 7px;
-  font-size: 12px;
-}
-  
-label.mincondition {
-  margin: auto 7px;
-  font-size: 12px;
-}
-      
-label.maxprice {
-  margin: auto 7px;
-  font-size: 12px;
+.usernamesearch {
+  margin: 2% auto;
 }
 
-input[type=number], input[type=text] {
+label.bestdeals, label.sortby, label.mincondition, label.maxprice {
+  margin: auto 7px;
+  font-size: 10px;
+}
+
+input[type=text] {
+  padding-left: 5px;
   font-family: 'Spartan';
-  font-size: 12px;
+  font-size: 10px;
   width: 120px;
-  border: 2px solid #999999;
+  border: 1px solid #999999;
   height: 20px;
 }
 
 select {
   font-family: 'Spartan';
-  font-size: 12px;
+  font-size: 10px;
   background-color: white;
   border: 1px solid #999999;
   height: 25px;
@@ -38,13 +33,13 @@ select {
 button {
   font-family: 'Spartan';
   margin: auto 7px;
-  padding: 5px;
+  padding-top: 5px;
   font-size: 12px;
   background-color:  #4D4D4D;
   color: white;
   border: 2px solid #999999; 
   border-radius: 20px;
-  height: 25px;
+  height: 30px;
   
   &:hover {
     background-color: #EEEEEE;
@@ -52,62 +47,4 @@ button {
     cursor: pointer
 
   }
-}
-
-.onoffswitch {
-  position: relative; width: 85px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-}
-
-.onoffswitchcheckbox {
-  display: none;
-}
-
-.onoffswitchlabel {
-  display: block; overflow: hidden; cursor: pointer;
-  border: 2px solid #999999; border-radius: 20px;
-}
-
-.onoffswitchinner {
-  display: block; width: 200%; margin-left: -100%;
-  transition: margin 0.3s ease-in 0s;
-}
-
-.onoffswitchinner:before, .onoffswitchinner:after {
-  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 35px;
-  font-size: 12px; color: white; font-family: 'Spartan';
-  box-sizing: border-box;
-}
-
-.onoffswitchinner:before {
-  content: "BEST";
-  font-family: 'Spartan';
-  padding-left: 10px;
-  background-color: #4D4D4D; color: #FFFFFF;
-  text-align: left;
-}
-
-.onoffswitchinner:after {
-  content: "ALL";
-  font-family: 'Spartan';
-  padding-right: 10px;
-  background-color: #EEEEEE; color: #999999;
-  text-align: right;
-}
-
-.onoffswitchswitch {
-  display: block; width: 16px; margin: 7px;
-  background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
-  right: 51px;
-  border: 2px solid #999999; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
-}
-
-.onoffswitchcheckbox:checked + .onoffswitchlabel .onoffswitchinner {
-  margin-left: 0;
-}
-
-.onoffswitchcheckbox:checked + .onoffswitchlabel .onoffswitchswitch {
-  right: 0px; 
 }
