@@ -5,7 +5,7 @@ import Footer from './Footer';
 import { AboutUs } from './about/AboutUs';
 import SaleDetail from './sale/SaleDetail';
 import Homepage from './homepage/Homepage';
-// import './reset.css';
+import './reset.css';
 import './App.css';
 
 function App() {

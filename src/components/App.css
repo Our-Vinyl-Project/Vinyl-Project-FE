@@ -1,33 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Spartan';
   text-align: center;
 }
 
 h1 {
+  margin-top: 2%;
   font-size: 40px;
-}
-
-input {
-  font-size: 12px;
-  width: 100px;
-}
-
-input[type=checkbox] {
-  width: 12px;
-}
-
-label {
-  margin: auto 7px;
-  font-size: 12px;
-}
-
-select {
-  font-size: 12px;
-}
-
-button {
-  margin: auto 7px;
-  font-size: 12px;
+  font-family: 'Spartan';
 }
 
 img {
@@ -35,18 +16,21 @@ img {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 14px;
   max-width: 200px;
 }
 
 p {
-  font-size: 12px;
+  font-size: 10px;
+  max-width: 200px;
 }
 
 ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 2% 10%;
 }
 
 li {
@@ -60,4 +44,10 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+
+footer {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 12px;
 }
