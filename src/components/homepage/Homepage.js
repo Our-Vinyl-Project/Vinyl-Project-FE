@@ -20,7 +20,7 @@ function Homepage() {
   return (
     <div>
       <Controls />
-      <SalesList wants={wants} />
+      <SalesList />
     </div>
   );
 }

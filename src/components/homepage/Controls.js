@@ -11,14 +11,16 @@ const Controls = () => {
   const [user, setUser] = useState('');
   const dispatch = useDispatch();
 
-  const handleClick = () => dispatch(getWants(user));
+  const handleClick = () =>
+    dispatch(getWants(user));
 
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(setControls({ sortType, condition, maxPrice, bestOnly }));
   };
 
-  const toggleBestOnly = () => setBestOnly(bestOnly => !bestOnly);
+  const toggleBestOnly = () =>
+    setBestOnly(bestOnly => !bestOnly);
 
   useEffect(() => {
     dispatch(setControls({ sortType, condition, maxPrice, bestOnly }));
@@ -34,7 +36,7 @@ const Controls = () => {
       <form onSubmit={handleSubmit}>
 
         <label>Best Only</label>
-        <input type="checkbox" onClick={({ target }) => toggleBestOnly(target.checked)} checked={bestOnly} />
+        <input type="checkbox" onClick={({ target }) => toggleBestOnly(target.checked)} defaultChecked={bestOnly} />
 
         <label>Sort by:</label>
         <select onChange={({ target }) => setSortType(target.value)} >
