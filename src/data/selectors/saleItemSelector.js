@@ -21,6 +21,7 @@ export const sortBy = (filteredByMaxPrice, sortCriterion) => {
 };
 
 export const selectSaleItems = (state, sortCriterion, condition, maxPrice, single) => {
+  if(state.wants.saleItems.length === 0) return [];
   const filteredByCondition = filterByCondition(state, condition);
   const filteredByMaxPrice = filterByMaxPrice(filteredByCondition, maxPrice);
   const sorted = sortBy(filteredByMaxPrice, sortCriterion);
