@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getWants } from '../../data/actions/wantActions';
 import setControls from '../../data/actions/controlActions';
-
+import styles from './Controls.css';
 
 const Controls = () => {
   const [sortType, setSortType] = useState('');
@@ -30,14 +30,16 @@ const Controls = () => {
 
       <form onSubmit={handleSubmit}>
 
-        <label></label>
-          <input type="checkbox">
-          <span class="slider round"></span>
+        <span className="switcher switcher-2">
+          <input type="checkbox" id="switcher-2"/>
+          <label htmlFor="switcher-2"></label>
+        </span>
+
         <label>Sort by:</label>
         <select onChange={({ target }) => setSortType(target.value)} >
           <option value="deal">Best Deals</option>
           <option value="condition">Best Condition</option>
-          <option value="item_only_price">Lowest Price</option>
+          <option value="price">Lowest Price</option>
           <option value="percent_diff">% Discount</option>
           <option value="amount_diff">$ Discount</option>
         </select>
