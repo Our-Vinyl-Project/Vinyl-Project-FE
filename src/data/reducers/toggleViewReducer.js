@@ -1,5 +1,7 @@
 import { TOGGLE_VIEW } from '../actions/toggleViewAction';
 
-export default function controls(state = {}, action){
-  return action.type === TOGGLE_VIEW ? {} : state;
+const initialState = true;
+
+export default function controls(state = initialState, action){
+  return action.type === TOGGLE_VIEW ? !state : state;
 }

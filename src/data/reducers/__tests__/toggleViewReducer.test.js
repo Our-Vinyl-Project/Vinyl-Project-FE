@@ -3,14 +3,12 @@ import toggleView from '../toggleViewReducer';
 
 describe('Toggle View Reducer', () => {
   it('creates a new object in state as a means to trigger a toggle change', () => {
-    const state = {};
+    const state = true;
 
     const action = ({
-      type: TOGGLE_VIEW,
-      payload: {}
+      type: TOGGLE_VIEW
     });
 
-    expect(toggleView(state, action)).toEqual({});
-    expect(toggleView(state, action)).not.toBe(state);
+    expect(toggleView(state, action)).toEqual(false);
   });
 });
