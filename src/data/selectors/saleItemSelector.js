@@ -20,12 +20,12 @@ export const sortBy = (filteredByMaxPrice, sortCriterion) => {
   return filteredByMaxPrice.slice().sort((a, b) => a[sortCriterion] - b[sortCriterion]);
 };
 
-export const selectSaleItems = (state, sortCriterion, condition, maxPrice, single) => {
+export const selectSaleItems = (state, sortCriterion, condition, maxPrice, bestOnly) => {
   if(state.wants.saleItems.length === 0) return [];
   const filteredByCondition = filterByCondition(state, condition);
   const filteredByMaxPrice = filterByMaxPrice(filteredByCondition, maxPrice);
   const sorted = sortBy(filteredByMaxPrice, sortCriterion);
-  return single ?
+  return bestOnly ?
     sorted.sort((a, b) => a.release_id - b.release_id).reduce((acc, saleItem, i) => {
       if(i === 0)
         acc.push(saleItem); else

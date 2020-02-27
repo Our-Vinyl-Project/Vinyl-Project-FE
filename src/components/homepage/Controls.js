@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getWants } from '../../data/actions/wantActions';
 import setControls from '../../data/actions/controlActions';
@@ -7,17 +7,22 @@ const Controls = () => {
   const [sortType, setSortType] = useState('');
   const [condition, setCondition] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [bestOnly, setBestOnly] = useState(true);
   const [user, setUser] = useState('');
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(getWants(user));
-  };
+  const handleClick = () => dispatch(getWants(user));
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(setControls({ sortType, condition, maxPrice }));
+    dispatch(setControls({ sortType, condition, maxPrice, bestOnly }));
   };
+
+  const toggleBestOnly = () => setBestOnly(bestOnly => !bestOnly);
+
+  useEffect(() => {
+    dispatch(setControls({ sortType, condition, maxPrice, bestOnly }));
+  }, [bestOnly]);
 
   return (
     <>
@@ -29,7 +34,7 @@ const Controls = () => {
       <form onSubmit={handleSubmit}>
 
         <label>Best Only</label>
-        <input type="checkbox"/>
+        <input type="checkbox" onClick={({ target }) => toggleBestOnly(target.checked)} checked={bestOnly} />
 
         <label>Sort by:</label>
         <select onChange={({ target }) => setSortType(target.value)} >
@@ -57,9 +62,7 @@ const Controls = () => {
         <button>Update</button>
       </form>      
     </>
-
   );
-
 };
 
 export default Controls;

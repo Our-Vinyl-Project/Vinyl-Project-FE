@@ -198,7 +198,7 @@ describe('getSorted function', () => {
   });
 });
 
-describe('selectSaleItems single = false', () => {
+describe('selectSaleItem bestOnly = false', () => {
   it('returns an array of sales items after filtering and sorting', () => {
     const result = selectSaleItems(state, 'item_only_price', '8', 30, false);
     expect(result).toEqual([{
@@ -224,7 +224,7 @@ describe('selectSaleItems single = false', () => {
   });
 });
 
-describe('selectSaleItems single = true', () => {
+describe('selectSaleItems bestOnly = true', () => {
   it('returns an array of sales items after filtering and sorting, only one item per release', () => {
     const result = selectSaleItems(state, 'item_only_price', '0', 30, true);
     //console.log('result', result);
