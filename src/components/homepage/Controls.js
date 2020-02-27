@@ -11,8 +11,7 @@ const Controls = () => {
   const [user, setUser] = useState('');
   const dispatch = useDispatch();
 
-  const handleClick = (event) => {
-    // event.preventDefault();
+  const handleClick = () => {
     dispatch(getWants(user));
   };
 
