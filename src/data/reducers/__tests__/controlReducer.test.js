@@ -1,5 +1,5 @@
-import controls from './controlReducer';
-import { SET_CONTROLS } from '../actions/controlActions';
+import controls from '../controlReducer';
+import { SET_CONTROLS } from '../../actions/controlActions';
 
 describe('control Reducer reduces', () => {
   it('updates state based on control action', () => {
