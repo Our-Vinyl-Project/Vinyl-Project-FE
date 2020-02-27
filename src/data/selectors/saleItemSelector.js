@@ -16,8 +16,11 @@ export const filterByMaxPrice = (filteredByCondition, maxPrice) => {
 
 export const sortBy = (filteredByMaxPrice, sortCriterion) => {
   if(filteredByMaxPrice.length === 0) return [];
-  if(sortCriterion === 'condition') sortCriterion = conditionRatings[sortCriterion];
-  return filteredByMaxPrice.slice().sort((a, b) => a[sortCriterion] - b[sortCriterion]);
+  return filteredByMaxPrice.slice().sort((a, b) => {
+    return sortCriterion === 'condition' ?
+      -conditionRatings[a.condition_media] + conditionRatings[b.condition_media] :
+      a[sortCriterion] - b[sortCriterion];
+  });
 };
 
 export const selectSaleItems = ({ wants: { saleItems } }, sortCriterion, condition, maxPrice, bestOnly) => {
