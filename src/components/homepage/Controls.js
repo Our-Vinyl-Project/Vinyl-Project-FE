@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { getWants } from '../../data/actions/wantActions';
 import setControls from '../../data/actions/controlActions';
 
-
 const Controls = () => {
   const [sortType, setSortType] = useState('');
   const [condition, setCondition] = useState('');
@@ -29,11 +28,15 @@ const Controls = () => {
       <br/><br/>
 
       <form onSubmit={handleSubmit}>
+
+        <label>Best Only</label>
+        <input type="checkbox"/>
+
         <label>Sort by:</label>
         <select onChange={({ target }) => setSortType(target.value)} >
           <option value="deal">Best Deals</option>
           <option value="condition">Best Condition</option>
-          <option value="item_only_price">Lowest Price</option>
+          <option value="price">Lowest Price</option>
           <option value="percent_diff">% Discount</option>
           <option value="amount_diff">$ Discount</option>
         </select>

@@ -12,6 +12,10 @@ input {
   width: 100px;
 }
 
+input[type=checkbox] {
+  width: 12px;
+}
+
 label {
   margin: auto 7px;
   font-size: 12px;
