@@ -29,6 +29,10 @@ const Controls = () => {
       <br/><br/>
 
       <form onSubmit={handleSubmit}>
+
+        <label></label>
+          <input type="checkbox">
+          <span class="slider round"></span>
         <label>Sort by:</label>
         <select onChange={({ target }) => setSortType(target.value)} >
           <option value="deal">Best Deals</option>
