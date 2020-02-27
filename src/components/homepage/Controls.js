@@ -11,8 +11,7 @@ const Controls = () => {
   const [user, setUser] = useState('');
   const dispatch = useDispatch();
 
-  const handleClick = (event) => {
-    // event.preventDefault();
+  const handleClick = () => {
     dispatch(getWants(user));
   };
 
@@ -23,28 +22,30 @@ const Controls = () => {
 
   return (
     <>
-      <label>Username:</label>
+      <label className={styles.username}>Username:</label>
       <input value={user} onChange={({ target }) => setUser(target.value)} type="text"></input>
-      <button onClick={handleClick}>Find Deals</button>
+      <button onClick={handleClick}>FIND DEALS</button>
       <br/><br/>
 
       <form onSubmit={handleSubmit}>
 
-        <span className="switcher switcher-2">
-          <input type="checkbox" id="switcher-2"/>
-          <label htmlFor="switcher-2"></label>
-        </span>
+        <div className={styles.onoffswitch}>
+          <input type="checkbox" name="onoffswitch" className={styles.onoffswitchcheckbox} id="myonoffswitch"/>
+          <label className={styles.onoffswitchlabel} htmlFor="myonoffswitch">
+            <span className={styles.onoffswitchinner}></span>
+            <span className={styles.onoffswitchswitch}></span>
+          </label>
+        </div>
 
-        <label>Sort by:</label>
+        <label className={styles.sortby}>Sort by:</label>
         <select onChange={({ target }) => setSortType(target.value)} >
-          <option value="deal">Best Deals</option>
-          <option value="condition">Best Condition</option>
-          <option value="price">Lowest Price</option>
           <option value="percent_diff">% Discount</option>
           <option value="amount_diff">$ Discount</option>
+          <option value="condition">Best Condition</option>
+          <option value="price">Lowest Price</option>
         </select>
 
-        <label>Min. Condition:</label>
+        <label className={styles.mincondition}>Min. Condition:</label>
         <select onChange={({ target }) => setCondition(target.value)}>
           <option value="0">Any</option>
           <option value="2">Fair</option>
@@ -56,9 +57,9 @@ const Controls = () => {
           <option value="8">Mint</option>
         </select>
 
-        <label>Max. Price:</label>
+        <label className={styles.maxprice}>Max. Price:</label>
         <input type="number" placeholder="$" onChange={({ target }) => setMaxPrice(target.value)}/>
-        <button>Update</button>
+        <button>UPDATE</button>
       </form>      
     </>
 

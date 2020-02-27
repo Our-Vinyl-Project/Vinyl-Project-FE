@@ -4,6 +4,7 @@ import { selectSaleItems } from '../../data/selectors/saleItemSelector';
 import { controlsSelector } from '../../data/selectors/controlsSelector';
 import Controls from './Controls';
 import SalesList from '../sale/SalesList';
+import styles from './Homepage.css';
 function Homepage() {
   const { sortType, condition, maxPrice } = useSelector(controlsSelector);
 

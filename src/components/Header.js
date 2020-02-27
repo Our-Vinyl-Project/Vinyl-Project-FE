@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
-    <h1>Vinyl RESTing Place</h1>
+    <Link to="/">
+      <h1>Vinyl RESTing Place</h1>
+    </Link>
   </header>
 );
 

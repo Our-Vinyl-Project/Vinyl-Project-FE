@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Spartan';
   text-align: center;
 }
 
 h1 {
+  margin-top: 2%;
   font-size: 40px;
+  font-family: 'Spartan';
 }
 
 img {

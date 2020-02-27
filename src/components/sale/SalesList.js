@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import styles from '../App.css';
+// import styles from './SalesList.css';
 
 const SalesList = ({ wants }) => {
   const saleItem = wants.map((sale, i) => (
