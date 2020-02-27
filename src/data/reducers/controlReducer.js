@@ -3,7 +3,8 @@ import { SET_CONTROLS } from '../actions/controlActions';
 const initialState = {
   sortType: 'deal',
   condition: '0',
-  maxPrice: ''
+  maxPrice: '',
+  bestOnly: true
 };
 
 export default function controls(state = initialState, action){
