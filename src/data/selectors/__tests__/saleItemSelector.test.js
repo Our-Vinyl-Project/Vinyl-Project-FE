@@ -96,9 +96,9 @@ beforeAll(() => {
   };
 });
 
-describe('getSalesItemsFilter1', () => {
+describe('filterByCondition', () => {
   it('filters sales items by a provided condition integer ranking (delivered as string)', () => {
-    const result = filterByCondition(state, '8');
+    const result = filterByCondition(state.wants.saleItems, '8');
     expect(result).toEqual([{
       title: 'Sade - The Best Of Sade (2xLP, Comp, RE, Gat)',
       condition_sleeve: 'Mint (M)',
@@ -198,7 +198,7 @@ describe('getSorted function', () => {
   });
 });
 
-describe('selectSaleItems single = false', () => {
+describe('selectSaleItem bestOnly = false', () => {
   it('returns an array of sales items after filtering and sorting', () => {
     const result = selectSaleItems(state, 'item_only_price', '8', 30, false);
     expect(result).toEqual([{
@@ -224,7 +224,7 @@ describe('selectSaleItems single = false', () => {
   });
 });
 
-describe('selectSaleItems single = true', () => {
+describe('selectSaleItems bestOnly = true', () => {
   it('returns an array of sales items after filtering and sorting, only one item per release', () => {
     const result = selectSaleItems(state, 'item_only_price', '0', 30, true);
     //console.log('result', result);

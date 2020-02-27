@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import setControls from '../../data/actions/controlActions';
 import styles from './Controls.css';
@@ -7,19 +7,28 @@ const Controls = () => {
   const [sortType, setSortType] = useState('');
   const [condition, setCondition] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [bestOnly, setBestOnly] = useState(true);
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(setControls({ sortType, condition, maxPrice }));
+    dispatch(setControls({ sortType, condition, maxPrice, bestOnly }));
   };
+
+  const toggleBestOnly = () =>
+    setBestOnly(bestOnly => !bestOnly);
+
+  useEffect(() => {
+    dispatch(setControls({ sortType, condition, maxPrice, bestOnly }));
+  }, [bestOnly]);
 
   return (
     <>
       <div className={styles.controls}>
         <form onSubmit={handleSubmit}>
 
-          <label className={styles.bestdeals}>Best Deals Only:</label><input type="checkbox"/>
+          <label className={styles.bestdeals}>Best Deals Only:</label>
+          <input type="checkbox" onClick={({ target }) => toggleBestOnly(target.checked)} defaultChecked={bestOnly} />
 
           <label className={styles.sortby}>Sort by:</label>
           <select onChange={({ target }) => setSortType(target.value)} >
@@ -44,12 +53,10 @@ const Controls = () => {
           <label className={styles.maxprice}>Max. Price:</label>
           <input type="text" placeholder="$" onChange={({ target }) => setMaxPrice(target.value)}/>
           <button>UPDATE</button>
-        </form>
-      </div>    
+        </form>    
+      </div>
     </>
-
   );
-
 };
 
 export default Controls;

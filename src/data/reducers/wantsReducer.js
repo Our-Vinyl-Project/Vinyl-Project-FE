@@ -1,7 +1,7 @@
 import { FETCH_WANTS_LOADING, FETCH_WANTS } from '../actions/wantActions';
 
 const initialState = {
-  loading: true,
+  loading: false,
   saleItems: []
 };
 

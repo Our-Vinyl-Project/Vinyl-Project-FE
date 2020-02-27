@@ -16,12 +16,12 @@ img {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 14px;
   max-width: 200px;
 }
 
 p {
-  font-size: 12px;
+  font-size: 10px;
   max-width: 200px;
 }
 
@@ -47,5 +47,7 @@ a {
 }
 
 footer {
-  margin-top: 2%
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 12px;
 }

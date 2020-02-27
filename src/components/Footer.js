@@ -5,7 +5,7 @@ import {
 
 const Footer = () => (
   <footer>
-    <Link to="/about">About</Link>
+    <Link to="/about">ABOUT</Link>
   </footer>
 );
 
