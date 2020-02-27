@@ -1,4 +1,4 @@
-import setControls, { SET_CONTROLS } from './controlActions';
+import setControls, { SET_CONTROLS } from '../controlActions';
 
 describe('Set control actions', () => {
   it('creates a control action from a control object', () => {
