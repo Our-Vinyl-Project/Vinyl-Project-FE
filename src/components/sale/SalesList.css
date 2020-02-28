@@ -12,6 +12,19 @@
   max-width: 200px;
 }
 
+.SLpercent {
+  font-size: 10px;
+}
+
+.SLamount {
+  font-size: 10px;
+}
+
+.SLavailable {
+  font-size: 10px;
+}
+
+
 .SalesList {
   list-style: none;
   display: flex;
@@ -31,3 +44,15 @@
     opacity: 70%;
   }
 }
+  .NoSaleItem {
+    border: 1px solid rgb(219, 14, 14);
+    border-radius: 5px;
+    padding: 1%;
+    width: fit-content;
+    margin: 7px;
+
+    &:hover {
+      opacity: 30%;
+    }
+ }
+

@@ -24,13 +24,17 @@ const SalesList = () => {
             <h3 className={styles.SLtitle}>{sale.title}</h3>
             <p className={styles.SLcondition}>Condition: {sale.condition_media}</p>
             <p className={styles.SLprice}>${sale.item_only_price}</p>
+            <p className={styles.SLpercent}>{sale.percent_diff} % different from suggested price</p>
+            <p className={styles.SLamount}>{sale.amount_diff} different from suggested price</p>
+            <p className={styles.SLavailable}>Number available: {sale.num_available}</p>
           </Link>
         </li>
       ) :
       (
-        <li className={styles.SaleItem} key={i}>
+        <li className={styles.NoSaleItem} key={i}>
           <img className={styles.SLthumb} src={sale.thumbnail} />
           <h3 className={styles.SLtitle}>{sale.title}</h3>
+          <p className={styles.SLavailable}>None Currently Available</p>
         </li>
       ));
 
