@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Sale{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.SaleDetails {
+  margin-top: 20px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+.SDthumb {
+  height: 200px;
+  margin-top: 20px;
+  border: 1px solid grey;
+}
+
+.SDtitle {
+  font-size: 14px;
+  max-width: 300px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.SDcondition, .SDprice {
+  font-size: 9.5px;
+  max-width: 200px;
+}
+
+.SDpercent {
+  font-size: 9.5px;
+}
+
+.SDamount {
+  font-size: 9.5px;
+}
+
+.SDavailable {
+  font-size: 9.5px;
+}
+
+.discogsLink {
+  font-size: 12px;
+  font-weight: bolder;
+  text-align: center;
+
+  &:hover {
+    color: #D0AFA8;
+    text-decoration: underline;
+  }
+}
+
+.graph {
+  display: flex;
+  justify-content: center;
+  margin: 1% auto;
+  border: 1px solid grey;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
