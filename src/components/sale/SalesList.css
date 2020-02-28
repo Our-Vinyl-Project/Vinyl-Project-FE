@@ -12,6 +12,13 @@
   max-width: 200px;
 }
 
+.SLpercent {
+  font-size: 10px;
+}
+.SLamount {
+  font-size: 10px;
+}
+
 .SalesList {
   list-style: none;
   display: flex;
