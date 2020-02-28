@@ -19,7 +19,7 @@ function Homepage() {
       <div>
         <Search />
         {loading ? <Loading /> : null}
-        <img className={styles.homepageplaceholder} src="https://s2.best-wallpaper.net/wallpaper/3840x2160/1804/Vinyl-player-retro-style_3840x2160.jpg" />
+        <img className={styles.homepageplaceholder} src="./src/assets/placeholder.jpg" />
       </div>
     );
   }
