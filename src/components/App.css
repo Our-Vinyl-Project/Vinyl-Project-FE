@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
 
+html {
+  background: url('../assets/bg1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
 body {
   font-family: 'Spartan';
   text-align: center;
