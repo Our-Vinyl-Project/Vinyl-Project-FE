@@ -4,8 +4,8 @@ import setControls from '../../data/actions/controlActions';
 import styles from './Controls.css';
 
 const Controls = () => {
-  const [sortType, setSortType] = useState('');
-  const [condition, setCondition] = useState('');
+  const [sortType, setSortType] = useState('percent_diff');
+  const [condition, setCondition] = useState('0');
   const [maxPrice, setMaxPrice] = useState('');
   const [bestOnly, setBestOnly] = useState(true);
   const dispatch = useDispatch();
