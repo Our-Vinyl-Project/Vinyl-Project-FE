@@ -1,11 +1,10 @@
 import React from 'react';
-import './Loading.css';
+import styles from './Loading.css';
 
 export default function Loading(){
   return (
     <>
-      <h3>Loading...</h3>
-      <div className="loader"></div>
+      <div className={styles.loader}></div>
     </>
   );
 }

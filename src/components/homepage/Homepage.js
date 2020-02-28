@@ -5,15 +5,21 @@ import { controlsSelector } from '../../data/selectors/controlsSelector';
 import Search from './Search';
 import Controls from './Controls';
 import SalesList from '../sale/SalesList';
+import { isWantsLoading } from '../../data/selectors/wantsSelector';
+import Loading from '../Loading';
+import styles from './Homepage.css';
 function Homepage() {
   const { sortType, condition, maxPrice, bestOnly } = useSelector(controlsSelector);
 
   const wants = useSelector(state => selectSaleItems(state, sortType, condition, maxPrice, bestOnly));
+  const loading = useSelector(isWantsLoading);
 
-  if(!wants){
+  if(wants.length === 0){
     return (
       <div>
         <Search />
+        {loading ? <Loading /> : null}
+        <img className={styles.homepageplaceholder} src="https://s2.best-wallpaper.net/wallpaper/3840x2160/1804/Vinyl-player-retro-style_3840x2160.jpg" />
       </div>
     );
   }

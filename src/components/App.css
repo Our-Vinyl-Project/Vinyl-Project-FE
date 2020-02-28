@@ -5,40 +5,25 @@ body {
   text-align: center;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
+  opacity: 80%;
+  background: url('../assets/brush3.png');
+  background-repeat: no-repeat;
+  background-size: 600px 50px;
+  width: 600px;
+  padding: 8px 0;
   margin-top: 2%;
   font-size: 40px;
   font-family: 'Spartan';
 }
 
-img {
-  height: 200px;
-}
-
-h3 {
-  font-size: 14px;
-  max-width: 200px;
-}
-
-p {
-  font-size: 10px;
-  max-width: 200px;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 2% 10%;
-}
-
-li {
-  border: 1px dotted black;
-  border-radius: 5px;
-  padding: 1%;
-  width: fit-content;
-  margin: 7px;
+h1:hover {
+  color: rgb(80, 80, 80);
 }
 
 a {
@@ -50,4 +35,13 @@ footer {
   margin-top: 2%;
   margin-bottom: 2%;
   font-size: 12px;
+}
+
+footer a:hover {
+  opacity: 80%;
+  background: url('../assets/brush3.png');
+  background-repeat: no-repeat;
+  background-size: 80px 20px;
+  width: 100px;
+  padding: 5px 18px;
 }

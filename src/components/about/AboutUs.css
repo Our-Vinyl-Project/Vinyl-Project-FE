@@ -1,0 +1,52 @@
+.aboutHeader {
+  margin: 2% auto;
+}
+
+.aboutPar {
+  width: 450px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: justify;
+  margin: 0 auto;
+}
+
+.devImg {
+  height: 200px;
+  margin-bottom: 5px;
+}
+
+.devLinkGH {
+  font-size: 12px;
+  padding-right: 10px;
+
+  &:hover {
+    color: #D0AFA8;
+    font-weight: bold;
+  }
+}
+
+.devLinkLI {
+  font-size: 12px;
+  padding-left: 10px;
+
+  &:hover {
+    color: #D0AFA8;
+    font-weight: bold;
+  }
+}
+
+.devList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2% 10%;
+}
+
+.devItem {
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 5px;
+  padding: 1%;
+  width: fit-content;
+  margin: 7px;
+}
