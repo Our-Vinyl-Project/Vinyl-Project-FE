@@ -21,6 +21,7 @@
 }
 
 .SaleItem {
+  background-color: white;
   border: 1px solid rgb(61, 61, 61);
   border-radius: 5px;
   padding: 1%;
