@@ -34,8 +34,4 @@ function Homepage() {
   );
 }
 
-Homepage.propTypes = {
-  
-};
-
 export default Homepage;
