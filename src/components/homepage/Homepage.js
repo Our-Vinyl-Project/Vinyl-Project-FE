@@ -20,11 +20,7 @@ function Homepage() {
       <div>
         <Search />
         {loading ? <Loading /> : null}
-<<<<<<< HEAD
-        <img className={styles.homepageplaceholder} src="src/assets/placeholder.jpg" />
-=======
         <img className={styles.homepageplaceholder} src={img} />
->>>>>>> a262b9c475a0d7fa588ad962cbce747b634ae411
       </div>
     );
   }
