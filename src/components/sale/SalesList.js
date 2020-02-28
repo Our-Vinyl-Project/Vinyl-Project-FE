@@ -31,9 +31,10 @@ const SalesList = () => {
         </li>
       ) :
       (
-        <li className={styles.SaleItem} key={i}>
+        <li className={styles.NoSaleItem} key={i}>
           <img className={styles.SLthumb} src={sale.thumbnail} />
           <h3 className={styles.SLtitle}>{sale.title}</h3>
+          <p className={styles.SLavailable}>None Currently Available</p>
         </li>
       ));
 
