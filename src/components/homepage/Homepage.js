@@ -8,6 +8,7 @@ import SalesList from '../sale/SalesList';
 import { isWantsLoading } from '../../data/selectors/wantsSelector';
 import Loading from '../Loading';
 import styles from './Homepage.css';
+import img from '../../assets/placeholder-sm.jpg';
 function Homepage() {
   const { sortType, condition, maxPrice, bestOnly } = useSelector(controlsSelector);
 
@@ -19,7 +20,7 @@ function Homepage() {
       <div>
         <Search />
         {loading ? <Loading /> : null}
-        <img className={styles.homepageplaceholder} src="./src/assets/placeholder.jpg" />
+        <img className={styles.homepageplaceholder} src={img} />
       </div>
     );
   }

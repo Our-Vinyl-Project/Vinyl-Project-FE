@@ -39,7 +39,7 @@ const SaleDetail = ({ match }) => {
         <p>Price: ${sale.item_only_price}</p>
         {aboveOrBelow(sale)}
         <br/>
-        <button><a href={`https:/www.discogs.com${sale.sale_link}`}>Get This Deal!</a></button>
+        <button><a href={`https:/www.discogs.com${sale.sale_link}`} target="_blank" rel="noopener noreferrer">Get This Deal!</a></button>
       </section>
       <PricesOverTimeChart />
     </>
