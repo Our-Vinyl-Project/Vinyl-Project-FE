@@ -61,7 +61,7 @@
 .graph {
   display: flex;
   justify-content: center;
-  margin: 1% auto;
+  margin: 0.5% auto;
   border: 1px solid grey;
   padding: 5px;
   border-radius: 5px;

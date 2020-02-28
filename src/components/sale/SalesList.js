@@ -24,8 +24,8 @@ const SalesList = () => {
             <h3 className={styles.SLtitle}>{sale.title}</h3>
             <p className={styles.SLcondition}>Condition: {sale.condition_media}</p>
             <p className={styles.SLprice}>Price: ${sale.item_only_price.toFixed(2)}</p>
-            <p className={styles.SLpercent}>{sale.percent_diff}% difference from suggested price</p>
-            <p className={styles.SLamount}>{sale.amount_diff} difference from suggested price</p>
+            <p className={styles.SLpercent}>{sale.percent_diff}% difference from fair market</p>
+            <p className={styles.SLamount}>${sale.amount_diff} difference from fair market</p>
             <p className={styles.SLavailable}> {sale.num_available} Available</p>
           </Link>
         </li>
