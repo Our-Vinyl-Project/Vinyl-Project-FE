@@ -7,6 +7,7 @@ import Controls from './Controls';
 import SalesList from '../sale/SalesList';
 import { isWantsLoading } from '../../data/selectors/wantsSelector';
 import Loading from '../Loading';
+import styles from './Homepage.css';
 function Homepage() {
   const { sortType, condition, maxPrice, bestOnly } = useSelector(controlsSelector);
 
@@ -18,7 +19,7 @@ function Homepage() {
       <div>
         <Search />
         {loading ? <Loading /> : null}
-        <img src="https://wallpaperstock.net/wallpapers/thumbs1/54080hd.jpg" />
+        <img className={styles.homepageplaceholder} src="https://s2.best-wallpaper.net/wallpaper/3840x2160/1804/Vinyl-player-retro-style_3840x2160.jpg" />
       </div>
     );
   }

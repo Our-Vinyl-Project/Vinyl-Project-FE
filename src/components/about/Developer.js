@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './AboutUs.css';
 
 export const Developer = ({ name, linkedin, github, image }) => {
   return (
@@ -7,8 +8,8 @@ export const Developer = ({ name, linkedin, github, image }) => {
       <img src={image}/>
       <p>{name}</p>
       <section>
-        <a href={linkedin}><img src="./assets/github.png"/></a>
-        <a href={github}><img src="./assets/linkedin.png"/></a>
+        <a href={linkedin}>GitHub</a>
+        <a href={github}>LinkedIn</a>
       </section>
     </li>
   );

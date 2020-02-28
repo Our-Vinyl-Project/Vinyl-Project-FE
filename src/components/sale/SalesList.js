@@ -6,7 +6,6 @@ import { selectSaleItems } from '../../data/selectors/saleItemSelector';
 import { controlsSelector } from '../../data/selectors/controlsSelector';
 import { isWantsLoading } from '../../data/selectors/wantsSelector';
 import Loading from '../Loading';
-// import styles from '../SalesList.css';
 
 const SalesList = () => {
   const { sortType, condition, maxPrice, bestOnly } = useSelector(controlsSelector);
