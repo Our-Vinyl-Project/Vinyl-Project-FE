@@ -15,9 +15,15 @@
 .SLpercent {
   font-size: 10px;
 }
+
 .SLamount {
   font-size: 10px;
 }
+
+.SLavailable {
+  font-size: 10px;
+}
+
 
 .SalesList {
   list-style: none;
