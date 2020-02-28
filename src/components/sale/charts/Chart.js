@@ -18,7 +18,8 @@ const PricesOverTimeChart = () => {
         },
         {
           type: 'number',
-          label: 'Price in $USD'
+          label: 'Price in $USD',
+          legend: { position: 'bottom' },
         }
       ]}
       options={
@@ -30,11 +31,12 @@ const PricesOverTimeChart = () => {
           },
           vAxis: { title: 'Weight', viewWindow: { min: 0, max: 15 } },
           legend: 'none',
-          curveType: 'function'
+          curveType: 'function',
+          colors: ['gray']
         }
       }
-      width={'100%'}
-      height={'100%'}
+      height={'200px'}
+      width={'600px'}
     />
   );
 };
