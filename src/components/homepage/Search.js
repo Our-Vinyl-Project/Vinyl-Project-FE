@@ -7,18 +7,19 @@ const Search = () => {
   const [user, setUser] = useState('');
   const dispatch = useDispatch();
   
-  const handleClick = () => {
+  const handleSubmit = event => {
+    event.preventDefault();
     dispatch(getWants(user));
   };
 
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <div className={styles.usernamesearch}>
         <label className={styles.username}>Username:</label>
         <input value={user} onChange={({ target }) => setUser(target.value)} type="text"></input>
-        <button onClick={handleClick}>FIND DEALS</button>
+        <button type="submit">FIND DEALS</button>
       </div>
-    </>
+    </form>
   );
 
 };

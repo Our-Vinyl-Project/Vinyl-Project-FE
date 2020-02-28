@@ -27,8 +27,8 @@ const Controls = () => {
       <div className={styles.controls}>
         <form onSubmit={handleSubmit}>
 
-          <label className={styles.bestdeals}>Best Deals Only:</label>
-          <input type="checkbox" onClick={({ target }) => toggleBestOnly(target.checked)} defaultChecked={bestOnly} />
+          <label className={styles.bestdeals}>Best Only:</label>
+          <input type="checkbox" onClick={toggleBestOnly} defaultChecked={bestOnly} />
 
           <label className={styles.sortby}>Sort by:</label>
           <select onChange={({ target }) => setSortType(target.value)} >

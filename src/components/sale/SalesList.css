@@ -1,0 +1,33 @@
+.SLthumb {
+  height: 200px;
+}
+
+.SLtitle {
+  font-size: 14px;
+  max-width: 200px;
+}
+
+.SLcondition, .SLprice {
+  font-size: 10px;
+  max-width: 200px;
+}
+
+.SalesList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2% 10%;
+}
+
+.SaleItem {
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 5px;
+  padding: 1%;
+  width: fit-content;
+  margin: 7px;
+
+  &:hover {
+    opacity: 70%;
+  }
+}
