@@ -8,6 +8,7 @@ import Homepage from './homepage/Homepage';
 import './reset.css';
 import './about/AboutUs.css';
 import './App.css';
+import PricesOverTimeChart from '../components/sale/charts/Chart';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={Homepage} />
         <Route path="/about" component={AboutUs} />
         <Route path="/detail/:id" component={SaleDetail} />
+        <Route path="/chart/" component={PricesOverTimeChart} />
       </Switch>
       <Footer />
     </Router>

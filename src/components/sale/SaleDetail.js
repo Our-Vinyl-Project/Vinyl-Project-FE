@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectSaleItem } from '../../data/selectors/saleItemSelector';
+import PricesOverTimeChart, { pricesOverTimeChart } from './charts/Chart';
 
 const SaleDetail = ({ match }) => {
   const sale = useSelector(state => selectSaleItem(state, match.params.id));
@@ -40,6 +41,7 @@ const SaleDetail = ({ match }) => {
         <br/>
         <button><a href={`https:/www.discogs.com${sale.sale_link}`}>Get This Deal!</a></button>
       </section>
+      <PricesOverTimeChart />
     </>
   );};
 
