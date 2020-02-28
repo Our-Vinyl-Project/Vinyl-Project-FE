@@ -6,6 +6,7 @@ import { selectSaleItems } from '../../data/selectors/saleItemSelector';
 import { controlsSelector } from '../../data/selectors/controlsSelector';
 import { isWantsLoading } from '../../data/selectors/wantsSelector';
 import Loading from '../Loading';
+import styles from './SalesList.css';
 
 const SalesList = () => {
   const { sortType, condition, maxPrice, bestOnly } = useSelector(controlsSelector);
@@ -17,25 +18,25 @@ const SalesList = () => {
   const saleItem = wants.map((sale, i) =>
     sale.item_only_price ?
       (
-        <li key={i}>
+        <li className={styles.SaleItem} key={i}>
           <Link to={`/detail/${sale.sale_id}`}>
-            <img src={sale.thumbnail} />
-            <h3>{sale.title}</h3>
-            <p>Condition: {sale.condition_media}</p>
-            <p>${sale.item_only_price}</p>
+            <img className={styles.SLthumb} src={sale.thumbnail} />
+            <h3 className={styles.SLtitle}>{sale.title}</h3>
+            <p className={styles.SLcondition}>Condition: {sale.condition_media}</p>
+            <p className={styles.SLprice}>${sale.item_only_price}</p>
           </Link>
         </li>
       ) :
       (
-        <li key={i}>
-          <img src={sale.thumbnail} />
-          <h3>{sale.title}</h3>
+        <li className={styles.SaleItem} key={i}>
+          <img className={styles.SLthumb} src={sale.thumbnail} />
+          <h3 className={styles.SLtitle}>{sale.title}</h3>
         </li>
       ));
 
   return (
     <>
-      <ul>
+      <ul className={styles.SalesList}>
         {saleItem}
       </ul>
     </>

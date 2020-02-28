@@ -26,40 +26,6 @@ h1:hover {
   color: rgb(80, 80, 80);
 }
 
-img {
-  height: 200px;
-}
-
-h3 {
-  font-size: 14px;
-  max-width: 200px;
-}
-
-p {
-  font-size: 10px;
-  max-width: 200px;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 2% 10%;
-}
-
-li {
-  border: 1px solid rgb(61, 61, 61);
-  border-radius: 5px;
-  padding: 1%;
-  width: fit-content;
-  margin: 7px;
-
-  &:hover {
-    opacity: 70%;
-  }
-}
-
 a {
   text-decoration: none;
   color: black;
