@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectSaleItem } from '../../data/selectors/saleItemSelector';
+import { Chart } from './charts/Chart';
 
 const SaleDetail = ({ match }) => {
   const sale = useSelector(state => selectSaleItem(state, match.params.id));
