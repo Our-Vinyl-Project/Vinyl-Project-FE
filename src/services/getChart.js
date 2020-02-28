@@ -9,6 +9,5 @@ const getChartData = releaseId => {
     });
 };
 
-// getChartData(374527).then(console.log);
 export default getChartData;
 
