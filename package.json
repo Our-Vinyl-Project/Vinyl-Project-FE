@@ -1,7 +1,11 @@
 {
-  "name": "vinyl-project-fe",
+  "name": "Vinyl-Project-Front-End",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discogs Marketplace Insights Front End",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Our-Vinyl-Project/vinyl-project-fe.git"
+  },
   "main": "src/index.js",
   "jest": {
     "setupFilesAfterEnv": [
@@ -25,8 +29,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "discogs-marketplace-js": "^2.0.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "superagent": "^5.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
