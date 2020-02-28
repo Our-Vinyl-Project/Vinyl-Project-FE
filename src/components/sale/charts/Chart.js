@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart } from 'react-google-charts';
+import getChartData from '../../../services/getChart.js';
 
 const PricesOverTimeChart = () => {
+  const [data, setData] = useState(null);
+  
+  useEffect(() => {
+    getChartData(374527)
+      .then (res => {
+        setData(res);
+      });
+  }, []);
+  if(!data) return null;
   return (
     <Chart
       chartType="Line"
       
       rows={[
-        [new Date('2015-02-14T23:38:17.421+00:00'), 8], 
-        [new Date('2017-02-14T23:38:17.421+00:00'), 10], 
-        [new Date('2020-02-14T23:38:17.421+00:00'), 12]]}
+        [new Date(data[0][0]), data[0][1]], 
+        [new Date(data[1][0]), data[1][1]], 
+      ]}
       
       columns={[
         {
