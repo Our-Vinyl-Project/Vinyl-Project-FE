@@ -3,13 +3,33 @@
 }
 
 .SLtitle {
+  font-weight: bold;
   font-size: 14px;
   max-width: 200px;
+  line-height: 20px;
+  margin-bottom: 10px;
 }
 
 .SLcondition, .SLprice {
   font-size: 10px;
   max-width: 200px;
+}
+
+.SLpercent {
+  font-size: 10px;
+}
+
+.SLamount {
+  font-size: 10px;
+}
+
+.SLavailable {
+  font-size: 10px;
+}
+
+.SLnotavailable {
+  font-size: 12px;
+  color: rgb(139, 0, 0);
 }
 
 .SalesList {
@@ -21,13 +41,26 @@
 }
 
 .SaleItem {
+  text-align: left;
+  background-color: white;
   border: 1px solid rgb(61, 61, 61);
   border-radius: 5px;
   padding: 1%;
   width: fit-content;
   margin: 7px;
+  line-height: 20px;
 
   &:hover {
     opacity: 70%;
   }
 }
+
+.NoSaleItem {
+  border: 1px solid rgb(139, 0, 0);
+  border-radius: 5px;
+  padding: 1%;
+  width: fit-content;
+  margin: 7px;
+  background-color: white;
+}
+

@@ -30,7 +30,7 @@ export const selectSaleItems = ({ wants: { saleItems } }, sortCriterion, conditi
   const filteredByCondition = filterByCondition(availableItems, condition);
   const filteredByMaxPrice = filterByMaxPrice(filteredByCondition, maxPrice);
   const sorted = sortBy(filteredByMaxPrice, sortCriterion);
-  return bestOnly ?
+  const viewFiltered = bestOnly ?
     sorted.sort((a, b) => a.release_id - b.release_id).reduce((acc, saleItem, i) => {
       if(i === 0)
         acc.push(saleItem); else
@@ -39,6 +39,8 @@ export const selectSaleItems = ({ wants: { saleItems } }, sortCriterion, conditi
       return acc;
     }, []).concat(unavailableItems) :
     sorted.concat(unavailableItems);
+  
+  return sortBy(viewFiltered, sortCriterion);
 };
 
 export const selectSaleItem = (stateArray, saleItemId) =>

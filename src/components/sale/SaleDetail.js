@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectSaleItem } from '../../data/selectors/saleItemSelector';
+import PricesOverTimeChart, { pricesOverTimeChart } from './charts/Chart';
+import styles from './SaleDetail.css';
 
 const SaleDetail = ({ match }) => {
   const sale = useSelector(state => selectSaleItem(state, match.params.id));
@@ -10,15 +12,15 @@ const SaleDetail = ({ match }) => {
     if(sale.amount_diff > 0) {
       return (
         <>
-          <p>({sale.percent_diff}% above)</p>
-          <p>(${sale.amount_diff} above)</p>
+          <p className={styles.SDpercent}>{sale.percent_diff}% above suggested price</p>
+          <p className={styles.SDamount}>${sale.amount_diff} above suggested price</p>
         </>
       );
     } else {
       return (
         <>
-          <p>({sale.percent_diff}% below)</p>
-          <p>(${sale.amount_diff} below)</p>
+          <p className={styles.SDpercent}>{sale.percent_diff}% below suggested price</p>
+          <p className={styles.SDamount}>${sale.amount_diff} below suggested price</p>
         </>
       );
     }
@@ -26,19 +28,26 @@ const SaleDetail = ({ match }) => {
 
   return (
     <>
-      <section>
-        <h2>{sale.title}</h2>
-        <img src={sale.thumbnail} />
-      </section>
-      <section>
-        <p>Condition (Media): {sale.condition_media}</p>
-        <p>Condition (Sleeve): {sale.condition_sleeve}</p>
-        <p>Ships from: {sale.ships_from}</p>
-        <p>Fair Market Price: ${sale.suggested_price}</p>
-        <p>Price: ${sale.item_only_price}</p>
-        {aboveOrBelow(sale)}
-        <br/>
-        <button><a href={`https:/www.discogs.com${sale.sale_link}`}>Get This Deal!</a></button>
+      <section className={styles.container}>
+        <section className={styles.Sale}>
+          <section className={styles.SaleMain}>
+            <h2 className={styles.SDtitle}>{sale.title}</h2>
+            <img className={styles.SDthumb} src={sale.thumbnail} />
+          </section>
+          <section className={styles.SaleDetails}>
+            <p className={styles.SDcondition}>Condition (Media): {sale.condition_media}</p>
+            <p className={styles.SDcondition}>Condition (Sleeve): {sale.condition_sleeve}</p>
+            <p className={styles.SDcondition}>Ships from: {sale.ships_from}</p>
+            <p className={styles.SDprice}>Fair Market Price: ${sale.suggested_price}</p>
+            <p className={styles.SDprice}>Price: ${sale.item_only_price.toFixed(2)}</p>
+            {aboveOrBelow(sale)}
+            <br/>
+            <a className={styles.discogsLink} href={`https:/www.discogs.com${sale.sale_link}`} target="_blank" rel="noopener noreferrer">Get This Deal!</a>
+          </section>
+        </section>
+        <section className={styles.graph}>
+          <PricesOverTimeChart />
+        </section>
       </section>
     </>
   );};

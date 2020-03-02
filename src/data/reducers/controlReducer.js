@@ -1,7 +1,7 @@
 import { SET_CONTROLS } from '../actions/controlActions';
 
 const initialState = {
-  sortType: 'deal',
+  sortType: 'amount_diff',
   condition: '0',
   maxPrice: '',
   bestOnly: true
