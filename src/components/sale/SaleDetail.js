@@ -42,7 +42,7 @@ const SaleDetail = ({ match }) => {
             <p className={styles.SDprice}>Price: ${sale.item_only_price.toFixed(2)}</p>
             {aboveOrBelow(sale)}
             <br/>
-            <a className={styles.discogsLink} href={`https:/www.discogs.com${sale.sale_link}`} target="_blank" rel="noopener noreferrer">Get This Deal!</a>
+            <a className={styles.discogsLink} href={`https://www.discogs.com${sale.sale_link}`} target="_blank" rel="noopener noreferrer">Get This Deal!</a>
           </section>
         </section>
         <section className={styles.graph}>
