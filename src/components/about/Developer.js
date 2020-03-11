@@ -8,8 +8,8 @@ export const Developer = ({ name, linkedin, github, image }) => {
       <img  className={styles.devImg}src={image}/>
       <p>{name}</p>
       <section>
-        <a className={styles.devLinkGH} href={linkedin}>GitHub</a>・
-        <a className={styles.devLinkLI} href={github}>LinkedIn</a>
+        <a className={styles.devLinkGH} href={linkedin}>LinkedIn</a>・
+        <a className={styles.devLinkLI} href={github}>GitHub</a>
       </section>
     </li>
   );
