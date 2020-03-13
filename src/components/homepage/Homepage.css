@@ -3,3 +3,9 @@
   height: 60vh;
   border-radius: 5px;
 }
+.imageloading {
+  margin-top: 2% auto;
+  height: 60vh;
+  border-radius: 5px;
+  opacity: 0.4;
+}
