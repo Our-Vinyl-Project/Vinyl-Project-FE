@@ -20,7 +20,7 @@ function Homepage() {
       <div>
         <Search />
         {loading ? <Loading /> : null}
-        <img className={styles.homepageplaceholder} src={img} />
+        <img className= {loading ? styles.imageloading : styles.homepageplaceholder} src={img} />
       </div>
     );
   }
