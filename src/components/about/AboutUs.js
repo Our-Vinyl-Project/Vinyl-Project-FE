@@ -15,7 +15,7 @@ export const AboutUs = () => {
       <p className={styles.aboutPar}>Vinyl RESTing Place allows users to find personalized deals on the 53 million items for sale in the Marketplace at Discogs.com.
 Users maintain their list of releases they want to purchase using the integrated Wantlist tool on Discogs.com.
       <br/><br/>
-When a user enters their Discogs username into VRP, their Discogs Wantlist is retrieved and the Discogs Marketplace is searched for items for sale. The results of this search are then compared against the suggested prices for each item, and the best deal for each item is displayed. With filter options, the user is further able to customize the results.</p>
+When a user enters their Discogs username into VRP, their Discogs Wantlist is retrieved and the Discogs Marketplace is searched for items for sale. The results of this search are then compared against the suggested prices for each item, and the best deal for each item is displayed. With filter options, the user is further able to customize the results. <a href="https://github.com/Our-Vinyl-Project" target="_blank" rel="noopener noreferrer">View the project on <u>GitHub</u>.</a></p>
       <br/>
 
       <h2 className={styles.aboutHeader}>About The Developers</h2>
